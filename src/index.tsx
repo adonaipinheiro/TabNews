@@ -1,18 +1,7 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+
+import {SignIn} from '@screens';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Olá, TabsNews!</Text>
-    </View>
-  );
+  return <SignIn />;
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
