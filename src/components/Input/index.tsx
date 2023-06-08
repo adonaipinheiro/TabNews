@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import {Text, TextInput, View} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
@@ -8,7 +8,7 @@ import styles from './styles';
 import type {InputProps} from './types';
 import {Divider} from '../Divider';
 
-export function Input({error, label, ...props}: InputProps) {
+export const Input = memo(({error, label, ...props}: InputProps) => {
   return (
     <View style={styles(error).container}>
       <Text style={styles().label}>{label}</Text>
@@ -30,4 +30,4 @@ export function Input({error, label, ...props}: InputProps) {
       )}
     </View>
   );
-}
+});

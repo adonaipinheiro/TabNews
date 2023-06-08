@@ -1,7 +1,7 @@
 import React from 'react';
 import {StatusBar} from 'react-native';
 
-import {SignUp} from '@screens';
+import {Routes} from '@routes';
 
 import {$COLORS} from './utils/colors';
 
@@ -12,7 +12,7 @@ export default function App() {
         barStyle={'light-content'}
         backgroundColor={$COLORS.primaryDark}
       />
-      <SignUp />
+      <Routes />
     </>
   );
 }
