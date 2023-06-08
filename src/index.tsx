@@ -1,7 +1,18 @@
 import React from 'react';
+import {StatusBar} from 'react-native';
 
-import {SignIn} from '@screens';
+import {SignUp} from '@screens';
+
+import {$COLORS} from './utils/colors';
 
 export default function App() {
-  return <SignIn />;
+  return (
+    <>
+      <StatusBar
+        barStyle={'light-content'}
+        backgroundColor={$COLORS.primaryDark}
+      />
+      <SignUp />
+    </>
+  );
 }

@@ -4,4 +4,11 @@ module.exports = {
       sourceDir: './ios',
     },
   },
+  dependencies: {
+    'react-native-vector-icons': {
+      platforms: {
+        ios: null,
+      },
+    },
+  },
 };

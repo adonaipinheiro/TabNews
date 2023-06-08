@@ -1,6 +1,15 @@
 apply plugin: "com.android.application"
 apply plugin: "com.facebook.react"
 
+project.ext.vectoricons = [
+    iconFontNames: [ 
+        "FontAwesome5_Brands.ttf",
+		"FontAwesome5_Regular.ttf",
+		"FontAwesome5_Solid.ttf" 
+    ]
+]
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+
 import com.android.build.OutputFile
 
 /**
@@ -93,9 +102,9 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.tabnews"
+    namespace "br.com.tabnews"
     defaultConfig {
-        applicationId "com.tabnews"
+        applicationId "br.com.tabnews"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
