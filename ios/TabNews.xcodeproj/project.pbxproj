@@ -11,12 +11,12 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		157E2C2311883E60BA2FF38E /* libPods-TabNews-TabNewsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F552ED3313E642B71CD1CF1D /* libPods-TabNews-TabNewsTests.a */; };
+		3D0C5DEC3B69E972279EFE15 /* libPods-TabNews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CBCFF2A57218789A52C4714 /* libPods-TabNews.a */; };
+		42EF9320C24851FE8296C381 /* libPods-TabNews-TabNewsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F7D10422D0E73C4AB0DD7760 /* libPods-TabNews-TabNewsTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		B96A24682A315AEC00B769EC /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B96A24652A315AEC00B769EC /* FontAwesome5_Solid.ttf */; };
 		B96A24692A315AEC00B769EC /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B96A24662A315AEC00B769EC /* FontAwesome5_Brands.ttf */; };
 		B96A246A2A315AEC00B769EC /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B96A24672A315AEC00B769EC /* FontAwesome5_Regular.ttf */; };
-		CCF4486927CB29FAA4877DA7 /* libPods-TabNews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A93F560DC2E5FB40117BED0 /* libPods-TabNews.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,23 +33,23 @@
 		00E356EE1AD99517003FC87E /* TabNewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TabNewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* TabNewsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabNewsTests.m; sourceTree = "<group>"; };
+		0CBCFF2A57218789A52C4714 /* libPods-TabNews.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TabNews.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		108851465321C621068487E7 /* Pods-TabNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabNews.debug.xcconfig"; path = "Target Support Files/Pods-TabNews/Pods-TabNews.debug.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* TabNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = TabNews/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = TabNews/AppDelegate.mm; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = TabNews/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = TabNews/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = TabNews/main.m; sourceTree = "<group>"; };
-		2A93F560DC2E5FB40117BED0 /* libPods-TabNews.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TabNews.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		34DD4F99EAB06944BF9E9123 /* Pods-TabNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabNews.release.xcconfig"; path = "Target Support Files/Pods-TabNews/Pods-TabNews.release.xcconfig"; sourceTree = "<group>"; };
-		79660B57309B78014125C17F /* Pods-TabNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabNews.debug.xcconfig"; path = "Target Support Files/Pods-TabNews/Pods-TabNews.debug.xcconfig"; sourceTree = "<group>"; };
+		1E604A29F85931D42BB8D144 /* Pods-TabNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabNews.release.xcconfig"; path = "Target Support Files/Pods-TabNews/Pods-TabNews.release.xcconfig"; sourceTree = "<group>"; };
+		2BAE36D52E23FDFD46495CA1 /* Pods-TabNews-TabNewsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabNews-TabNewsTests.release.xcconfig"; path = "Target Support Files/Pods-TabNews-TabNewsTests/Pods-TabNews-TabNewsTests.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = TabNews/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AAFDDA979D4FDD41BE064645 /* Pods-TabNews-TabNewsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabNews-TabNewsTests.debug.xcconfig"; path = "Target Support Files/Pods-TabNews-TabNewsTests/Pods-TabNews-TabNewsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B96A24652A315AEC00B769EC /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Solid.ttf; sourceTree = "<group>"; };
 		B96A24662A315AEC00B769EC /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Brands.ttf; sourceTree = "<group>"; };
 		B96A24672A315AEC00B769EC /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Regular.ttf; sourceTree = "<group>"; };
-		D0D06066967CEE05619B0D31 /* Pods-TabNews-TabNewsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabNews-TabNewsTests.debug.xcconfig"; path = "Target Support Files/Pods-TabNews-TabNewsTests/Pods-TabNews-TabNewsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F339206B2A108A3B06EB81D6 /* Pods-TabNews-TabNewsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabNews-TabNewsTests.release.xcconfig"; path = "Target Support Files/Pods-TabNews-TabNewsTests/Pods-TabNews-TabNewsTests.release.xcconfig"; sourceTree = "<group>"; };
-		F552ED3313E642B71CD1CF1D /* libPods-TabNews-TabNewsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TabNews-TabNewsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7D10422D0E73C4AB0DD7760 /* libPods-TabNews-TabNewsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TabNews-TabNewsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				157E2C2311883E60BA2FF38E /* libPods-TabNews-TabNewsTests.a in Frameworks */,
+				42EF9320C24851FE8296C381 /* libPods-TabNews-TabNewsTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCF4486927CB29FAA4877DA7 /* libPods-TabNews.a in Frameworks */,
+				3D0C5DEC3B69E972279EFE15 /* libPods-TabNews.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,8 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				2A93F560DC2E5FB40117BED0 /* libPods-TabNews.a */,
-				F552ED3313E642B71CD1CF1D /* libPods-TabNews-TabNewsTests.a */,
+				0CBCFF2A57218789A52C4714 /* libPods-TabNews.a */,
+				F7D10422D0E73C4AB0DD7760 /* libPods-TabNews-TabNewsTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -157,10 +157,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				79660B57309B78014125C17F /* Pods-TabNews.debug.xcconfig */,
-				34DD4F99EAB06944BF9E9123 /* Pods-TabNews.release.xcconfig */,
-				D0D06066967CEE05619B0D31 /* Pods-TabNews-TabNewsTests.debug.xcconfig */,
-				F339206B2A108A3B06EB81D6 /* Pods-TabNews-TabNewsTests.release.xcconfig */,
+				108851465321C621068487E7 /* Pods-TabNews.debug.xcconfig */,
+				1E604A29F85931D42BB8D144 /* Pods-TabNews.release.xcconfig */,
+				AAFDDA979D4FDD41BE064645 /* Pods-TabNews-TabNewsTests.debug.xcconfig */,
+				2BAE36D52E23FDFD46495CA1 /* Pods-TabNews-TabNewsTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -172,12 +172,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "TabNewsTests" */;
 			buildPhases = (
-				8B73EABA07A68F0347C3445B /* [CP] Check Pods Manifest.lock */,
+				066221AA64C6284CF93A6F39 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				6B79C326210097521189028C /* [CP] Embed Pods Frameworks */,
-				4DE78DC33D1AE3C4D34FA64C /* [CP] Copy Pods Resources */,
+				BB8ECC54820D7D8508DCD4DB /* [CP] Embed Pods Frameworks */,
+				C971B7B6B48DE6D56AB9D0EF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -193,14 +193,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "TabNews" */;
 			buildPhases = (
-				DEB214B9FCC3E9E8A7BCE660 /* [CP] Check Pods Manifest.lock */,
+				4F245CDD23C470026089653E /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				F3FE3FB2F6180D746C520C34 /* [CP] Embed Pods Frameworks */,
-				FD544B692D15B27F79FD2B5F /* [CP] Copy Pods Resources */,
+				78979B492C5A355C7CA42D9B /* [CP] Embed Pods Frameworks */,
+				ACD382415AE806BFF1762D4F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -286,41 +286,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		4DE78DC33D1AE3C4D34FA64C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TabNews-TabNewsTests/Pods-TabNews-TabNewsTests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TabNews-TabNewsTests/Pods-TabNews-TabNewsTests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TabNews-TabNewsTests/Pods-TabNews-TabNewsTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6B79C326210097521189028C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TabNews-TabNewsTests/Pods-TabNews-TabNewsTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TabNews-TabNewsTests/Pods-TabNews-TabNewsTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TabNews-TabNewsTests/Pods-TabNews-TabNewsTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8B73EABA07A68F0347C3445B /* [CP] Check Pods Manifest.lock */ = {
+		066221AA64C6284CF93A6F39 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -342,7 +308,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DEB214B9FCC3E9E8A7BCE660 /* [CP] Check Pods Manifest.lock */ = {
+		4F245CDD23C470026089653E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -364,7 +330,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F3FE3FB2F6180D746C520C34 /* [CP] Embed Pods Frameworks */ = {
+		78979B492C5A355C7CA42D9B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -379,6 +345,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TabNews/Pods-TabNews-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ACD382415AE806BFF1762D4F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TabNews/Pods-TabNews-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TabNews/Pods-TabNews-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TabNews/Pods-TabNews-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB8ECC54820D7D8508DCD4DB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TabNews-TabNewsTests/Pods-TabNews-TabNewsTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TabNews-TabNewsTests/Pods-TabNews-TabNewsTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TabNews-TabNewsTests/Pods-TabNews-TabNewsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C971B7B6B48DE6D56AB9D0EF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TabNews-TabNewsTests/Pods-TabNews-TabNewsTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TabNews-TabNewsTests/Pods-TabNews-TabNewsTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TabNews-TabNewsTests/Pods-TabNews-TabNewsTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -398,23 +415,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		FD544B692D15B27F79FD2B5F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TabNews/Pods-TabNews-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TabNews/Pods-TabNews-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TabNews/Pods-TabNews-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -450,7 +450,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0D06066967CEE05619B0D31 /* Pods-TabNews-TabNewsTests.debug.xcconfig */;
+			baseConfigurationReference = AAFDDA979D4FDD41BE064645 /* Pods-TabNews-TabNewsTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -477,7 +477,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F339206B2A108A3B06EB81D6 /* Pods-TabNews-TabNewsTests.release.xcconfig */;
+			baseConfigurationReference = 2BAE36D52E23FDFD46495CA1 /* Pods-TabNews-TabNewsTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -501,7 +501,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 79660B57309B78014125C17F /* Pods-TabNews.debug.xcconfig */;
+			baseConfigurationReference = 108851465321C621068487E7 /* Pods-TabNews.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -529,7 +529,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 34DD4F99EAB06944BF9E9123 /* Pods-TabNews.release.xcconfig */;
+			baseConfigurationReference = 1E604A29F85931D42BB8D144 /* Pods-TabNews.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

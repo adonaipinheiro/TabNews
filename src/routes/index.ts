@@ -1,3 +1,3 @@
 export {Routes} from './routes';
 
-export type {StackNavigationProps} from './types';
+export type {StackNavigationProps} from './types/Stack';

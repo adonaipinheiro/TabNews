@@ -1,7 +1,7 @@
 import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
 
-import {StackRouter} from './Stack.routes';
+import {StackRouter} from './routers/Stack.routes';
 
 export function Routes() {
   return (

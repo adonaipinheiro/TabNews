@@ -26,7 +26,12 @@ export function SignIn() {
       <Divider size={16} />
       <Input label="Senha" />
       <Divider size={16} />
-      <Button text="Entrar" />
+      <Button
+        text="Entrar"
+        onPress={() => {
+          navigate('TabNews', {screen: 'Relevant'});
+        }}
+      />
       <Divider size={54} />
       <Text style={styles.text} onPress={() => navigate('SignUp')}>
         Novo no TabNews?{' '}
