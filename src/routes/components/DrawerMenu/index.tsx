@@ -16,7 +16,6 @@ import styles from './styles';
 
 export const DrawerMenu = (props: DrawerContentComponentProps) => {
   const {navigate} = useNavigation<StackNavigationProps>();
-
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>

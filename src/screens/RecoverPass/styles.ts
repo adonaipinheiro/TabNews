@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 
-import {$COLORS} from '@utils';
+import {$COLORS, getHeaderHeight} from '@utils';
 
 const styles = StyleSheet.create({
   container: {
@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: $COLORS.primary,
     padding: 40,
+    marginTop: -getHeaderHeight(),
   },
   img: {
     width: 100,

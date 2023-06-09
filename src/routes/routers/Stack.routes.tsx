@@ -22,6 +22,7 @@ const screenOptions: StackNavigationOptions = {
   },
   headerTitle: '',
   headerBackTitle: ' ',
+  detachPreviousScreen: true,
 };
 
 const tabNewsOptions: StackNavigationOptions = {

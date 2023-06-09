@@ -1,10 +1,59 @@
-import React from 'react';
-import {Text, View} from 'react-native';
+import React, {useState} from 'react';
+import {SafeAreaView} from 'react-native';
+
+import {
+  ContentList,
+  ErrorScreen,
+  LoadingScreen,
+  Pagination,
+} from '@components';
+import {useGetContentListQuery} from '@store/services/tabNews';
+
+import styles from './styles';
 
 export function Recent() {
+  const [page, setPage] = useState<number>(1);
+  const perPage = 10;
+  const {data, isLoading, error, refetch, isFetching} =
+    useGetContentListQuery({
+      page: page,
+      perPage,
+      strategy: 'new',
+    });
+
+  function onRefresh() {
+    setPage(1);
+    refetch();
+  }
+
+  function nextPage() {
+    setPage(page + 1);
+    refetch();
+  }
+
+  function PrevPage() {
+    setPage(page - 1);
+    refetch();
+  }
+
   return (
-    <View>
-      <Text>Recent</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      {(isLoading || isFetching) && <LoadingScreen />}
+      {error && <ErrorScreen retry={refetch} />}
+      {data && !error && !(isLoading || isFetching) && (
+        <ContentList
+          data={data}
+          currentPage={page}
+          perPage={perPage}
+          refresh={onRefresh}
+          loading={isLoading}
+        />
+      )}
+      <Pagination
+        currentPage={page}
+        onPressNext={nextPage}
+        onPressPrev={PrevPage}
+      />
+    </SafeAreaView>
   );
 }
