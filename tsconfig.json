@@ -7,6 +7,7 @@
       "@assets": ["src/assets"],
       "@components": ["src/components"],
       "@routes": ["src/routes"],
+      "@hooks": ["src/hooks"],
       "@store": ["src/store"],
       "@store/*": ["src/store/*"],
       "@utils": ["src/utils"]
