@@ -18,6 +18,7 @@ export const ErrorScreen = memo(({retry}: ErrorScreenProps) => {
       <Lottie
         source={lotties.error}
         speed={1}
+        resizeMode="contain"
         style={styles.lottie}
         autoPlay
         loop

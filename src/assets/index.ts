@@ -5,4 +5,5 @@ export const images = {
 export const lotties = {
   loading: require('./lotties/loading.json'),
   error: require('./lotties/error.json'),
+  empty: require('./lotties/empty.json'),
 };

@@ -6,6 +6,7 @@ import {GetContentListResponseType} from '@store/services/tabNews/types';
 import {ContentItem} from './ContentItem';
 import styles from './styles';
 import {Divider} from '../Divider';
+import {EmptyScreen} from '../EmptyScreen';
 
 interface ContentListProps {
   data: GetContentListResponseType;
@@ -29,6 +30,7 @@ export const ContentList = memo(
         style={styles.flatList}
         contentContainerStyle={styles.container}
         ListFooterComponent={<Divider size={20} />}
+        ListEmptyComponent={<EmptyScreen />}
         onRefresh={refresh}
         refreshing={loading}
         renderItem={({item, index}) => (
