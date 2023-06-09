@@ -7,6 +7,11 @@ export type StackParamList = {
   SignIn: undefined;
   SignUp: undefined;
   RecoverPass: undefined;
+  Post: undefined;
+  Institutional: {
+    url: string;
+    title: string;
+  };
   TabNews: NavigatorScreenParams<DrawerParamList>;
 };
 

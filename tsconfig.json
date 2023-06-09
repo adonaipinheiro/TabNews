@@ -11,6 +11,7 @@
       "@store": ["src/store"],
       "@store/*": ["src/store/*"],
       "@utils": ["src/utils"]
-    }
+    },
+    "lib": ["ES2022"]
   }
 }

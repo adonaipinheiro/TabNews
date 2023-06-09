@@ -15,7 +15,13 @@ import {DrawerParamList} from '../types/Drawer';
 const Drawer = createDrawerNavigator<DrawerParamList>();
 
 const renderIcon = (name: string, color: string) => (
-  <Icon light name={name} color={color} size={14} />
+  <Icon
+    name={name}
+    color={color}
+    size={14}
+    light
+    style={{width: 30}}
+  />
 );
 
 const screenOptions: DrawerNavigationOptions = {
@@ -30,7 +36,7 @@ const screenOptions: DrawerNavigationOptions = {
   drawerActiveTintColor: $COLORS.gray300,
   drawerType: 'front',
   drawerLabelStyle: {
-    fontWeight: '400',
+    fontWeight: '600',
     fontSize: 14,
     marginLeft: -20,
   },

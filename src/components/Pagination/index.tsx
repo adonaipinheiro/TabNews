@@ -1,6 +1,5 @@
 import React, {memo} from 'react';
-import {Text, View} from 'react-native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import {Text, TouchableOpacity, View} from 'react-native';
 
 import styles from './styles';
 import {Divider} from '../Divider';
@@ -27,11 +26,10 @@ export const Pagination = memo(
             </Text>
           </TouchableOpacity>
         )}
-
         <Divider size={20} horizontal />
-        <TouchableOpacity style={styles.currentPage}>
+        <View style={styles.currentPage}>
           <Text style={styles.currentPageText}>{currentPage}</Text>
-        </TouchableOpacity>
+        </View>
         <Divider size={20} horizontal />
         <TouchableOpacity
           onPress={onPressNext}

@@ -4,7 +4,13 @@ import {
 } from '@react-navigation/stack';
 import React from 'react';
 
-import {RecoverPass, SignIn, SignUp} from '@screens';
+import {
+  Institutional,
+  Post,
+  RecoverPass,
+  SignIn,
+  SignUp,
+} from '@screens';
 import {$COLORS} from '@utils';
 
 import {DrawerRouter} from './Drawer.routes';
@@ -22,20 +28,29 @@ const screenOptions: StackNavigationOptions = {
   },
   headerTitle: '',
   headerBackTitle: ' ',
-  detachPreviousScreen: true,
 };
 
 const tabNewsOptions: StackNavigationOptions = {
   headerShown: false,
 };
 
+const institutionalOptions: StackNavigationOptions = {
+  headerTitleAlign: 'center',
+};
+
 export function StackRouter() {
   return (
     <Stack.Navigator screenOptions={screenOptions}>
+      <Stack.Screen name="Post" component={Post} />
       <Stack.Screen
         name="TabNews"
         component={DrawerRouter}
         options={tabNewsOptions}
+      />
+      <Stack.Screen
+        name="Institutional"
+        component={Institutional}
+        options={institutionalOptions}
       />
       <Stack.Screen name="SignIn" component={SignIn} />
       <Stack.Screen name="SignUp" component={SignUp} />
