@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {SafeAreaView} from 'react-native';
 
 import {
@@ -7,39 +7,30 @@ import {
   LoadingScreen,
   Pagination,
 } from '@components';
-import {useGetContentListQuery} from '@store/services/tabNews';
 
 import styles from './styles';
+import {useRelevant} from './useRelevant';
 
 export function TabNews() {
-  const [page, setPage] = useState<number>(1);
-  const perPage = 10;
-  const {data, isLoading, error, refetch, isFetching} =
-    useGetContentListQuery({
-      page: page,
-      perPage,
-      strategy: 'relevant',
-    });
-
-  function onRefresh() {
-    setPage(1);
-    refetch();
-  }
-
-  function nextPage() {
-    setPage(page + 1);
-    refetch();
-  }
-
-  function PrevPage() {
-    setPage(page - 1);
-    refetch();
-  }
+  const {
+    prevPage,
+    data,
+    error,
+    isFetching,
+    isLoading,
+    nextPage,
+    onRefresh,
+    refetch,
+    perPage,
+    page,
+  } = useRelevant();
 
   return (
     <SafeAreaView style={styles.container}>
       {(isLoading || isFetching) && <LoadingScreen />}
-      {error && <ErrorScreen retry={refetch} />}
+      {!(isLoading || isFetching) && error && (
+        <ErrorScreen retry={refetch} />
+      )}
       {data && !error && !(isLoading || isFetching) && (
         <ContentList
           data={data}
@@ -52,7 +43,7 @@ export function TabNews() {
       <Pagination
         currentPage={page}
         onPressNext={nextPage}
-        onPressPrev={PrevPage}
+        onPressPrev={prevPage}
       />
     </SafeAreaView>
   );
