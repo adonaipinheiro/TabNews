@@ -38,10 +38,14 @@ const institutionalOptions: StackNavigationOptions = {
   headerTitleAlign: 'center',
 };
 
+const postOptions: StackNavigationOptions = {
+  presentation: 'modal',
+  animationEnabled: true,
+};
+
 export function StackRouter() {
   return (
     <Stack.Navigator screenOptions={screenOptions}>
-      <Stack.Screen name="Post" component={Post} />
       <Stack.Screen
         name="TabNews"
         component={DrawerRouter}
@@ -51,6 +55,11 @@ export function StackRouter() {
         name="Institutional"
         component={Institutional}
         options={institutionalOptions}
+      />
+      <Stack.Screen
+        name="Post"
+        options={postOptions}
+        component={Post}
       />
       <Stack.Screen name="SignIn" component={SignIn} />
       <Stack.Screen name="SignUp" component={SignUp} />

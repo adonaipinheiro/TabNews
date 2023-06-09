@@ -9,7 +9,7 @@ export function useRelevant() {
     useGetContentListQuery({
       page: page,
       perPage,
-      strategy: 'new',
+      strategy: 'relevant',
     });
 
   function onRefresh() {

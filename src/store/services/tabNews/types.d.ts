@@ -1,4 +1,4 @@
-export type ContentType = {
+export type ContentListType = {
   id: string;
   owner_id: string;
   parent_id: string | null;
@@ -21,4 +21,14 @@ export type GetContentListRequestType = {
   strategy: 'relevant' | 'old' | 'new';
 };
 
-export type GetContentListResponseType = ContentType[];
+export type GetContentListResponseType = ContentListType[];
+
+export type GetContentRequestType = {
+  owner_username: string;
+  slug: string;
+};
+
+export type GetContentResponseType = {
+  body: string;
+  title: string;
+};

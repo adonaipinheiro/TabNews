@@ -8,7 +8,8 @@
     "lint": "eslint --ext ts,tsx ./src",
     "lint:fix": "npm run lint -- --fix",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "@react-navigation/drawer": "6.6.2",
@@ -19,6 +20,8 @@
     "@reduxjs/toolkit": "1.9.5",
     "date-fns": "2.30.0",
     "lottie-react-native": "5.1.6",
+    "patch-package": "^7.0.0",
+    "postinstall-postinstall": "^2.1.0",
     "react": "18.2.0",
     "react-native": "0.71.8",
     "react-native-gesture-handler": "2.10.1",

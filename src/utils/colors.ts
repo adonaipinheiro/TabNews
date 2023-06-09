@@ -1,5 +1,3 @@
-import {Appearance} from 'react-native';
-
 const $COLORS_COMMON = {
   primary: 'rgb(36, 41, 47)',
   primaryDark: '#16191d',
@@ -44,22 +42,19 @@ const $COLORS_LIGHT = {
   ...$COLORS_ELEMENTS,
 };
 
-const $COLORS_DARK = {
-  text: 'rgb(230, 237, 243)',
-  button: 'rgb(35, 134, 54)',
-  buttonRed: 'rgb(248, 81, 73)',
-  background: 'rgb(13, 17, 23)',
-  error: 'rgba(248, 81, 73, 0.1)',
-  errorDark: 'rgba(248, 81, 73, 0.4)',
-  inputBackground: $COLORS_COMMON.grayLight,
-  inputBorder: $COLORS_COMMON.grayDark,
-  inputTextError: $COLORS_COMMON.red300,
-  inputBorderError: $COLORS_COMMON.redDark300,
-  ...$COLORS_COMMON,
-  ...$COLORS_ELEMENTS,
-};
+// const $COLORS_DARK = {
+//   text: 'rgb(230, 237, 243)',
+//   button: 'rgb(35, 134, 54)',
+//   buttonRed: 'rgb(248, 81, 73)',
+//   background: 'rgb(13, 17, 23)',
+//   error: 'rgba(248, 81, 73, 0.1)',
+//   errorDark: 'rgba(248, 81, 73, 0.4)',
+//   inputBackground: $COLORS_COMMON.grayLight,
+//   inputBorder: $COLORS_COMMON.grayDark,
+//   inputTextError: $COLORS_COMMON.red300,
+//   inputBorderError: $COLORS_COMMON.redDark300,
+//   ...$COLORS_COMMON,
+//   ...$COLORS_ELEMENTS,
+// };
 
-export const $COLORS =
-  Appearance.getColorScheme() === 'dark'
-    ? $COLORS_DARK
-    : $COLORS_LIGHT;
+export const $COLORS = $COLORS_LIGHT;

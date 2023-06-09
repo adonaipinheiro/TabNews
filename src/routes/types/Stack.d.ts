@@ -7,7 +7,13 @@ export type StackParamList = {
   SignIn: undefined;
   SignUp: undefined;
   RecoverPass: undefined;
-  Post: undefined;
+  Post: {
+    title: string;
+    slug: string;
+    owner_username: string;
+    tabcoins: number;
+    children_deep_count: number;
+  };
   Institutional: {
     url: string;
     title: string;

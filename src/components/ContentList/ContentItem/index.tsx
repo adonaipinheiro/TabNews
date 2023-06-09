@@ -1,22 +1,37 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {memo} from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
-import {ContentType} from '@store/services/tabNews/types';
+import {StackNavigationProps} from '@routes';
+import {ContentListType} from '@store/services/tabNews/types';
 import {calculeDiffDate} from '@utils';
 import {Divider} from 'src/components/Divider';
 
 import styles from './styles';
 
 interface ContentItemProps {
-  item: ContentType;
+  item: ContentListType;
   number: number;
 }
 
 export const ContentItem = memo(
   ({item, number}: ContentItemProps) => {
+    const {navigate} = useNavigation<StackNavigationProps>();
+
     return (
-      <TouchableOpacity style={styles.container} activeOpacity={0.7}>
+      <TouchableOpacity
+        onPress={() => {
+          navigate('Post', {
+            title: item.title,
+            children_deep_count: item.children_deep_count,
+            owner_username: item.owner_username,
+            slug: item.slug,
+            tabcoins: item.tabcoins,
+          });
+        }}
+        style={styles.container}
+        activeOpacity={0.7}>
         <Text style={styles.title}>
           {number}. {item.title}
         </Text>

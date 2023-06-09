@@ -1,19 +1,173 @@
-import React from 'react';
-import {SafeAreaView, ScrollView} from 'react-native';
-import Markdown from 'react-native-markdown-display';
-import WebView from 'react-native-webview';
+import {
+  RouteProp,
+  useNavigation,
+  useRoute,
+} from '@react-navigation/native';
+import React, {useEffect} from 'react';
+import {
+  Dimensions,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
+import {Markdown} from 'react-native-markdown-display';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
-const text =
-  "Neste artigo vamos trabalhar a redução do tamanho de pacote final, ofuscação no Android, ordenador de imports e path alias.\n\n## 1. Tamanho da aplicação\nTodos sabemos que hoje em dia, uma aplicação não pode simplesmente só funcionar bem, ela tem que pensar em questões de  usabilidade, estética e sim... Tamanho de download.\n\nComo o TabsNews é uma aplicação totalmente voltada para conteúdos CMS, ou seja, não se espera tenhamos tanta informação \"chumbada\" no código, o famoso *hardcoded*, espera-se que nossa aplicação final fique com um tamanho reduzido.\n\nNa loja da Google, já não se aceita mais APKs como formato para que suba novas aplicações, hoje o que se espera é o AAB que já reduz drásticamente o tamanho do pacote final, mas como didática, vou demonstrar os tamanhos extraindo uma APK e comparando.\n\n## 2. Configuração iOS - On-Demand Resources\nOs recursos sob demanda são conteúdos de aplicativos hospedados na App Store e separados do pacote de aplicativos relacionado que você baixou. Eles permitem pacotes de aplicativos menores, downloads mais rápidos e conteúdo de aplicativo mais rico. O aplicativo solicita conjuntos de recursos sob demanda e o sistema operacional gerencia o download e o armazenamento. O app usa os recursos e depois libera a requisição. Após o download, os recursos podem permanecer no dispositivo por vários ciclos de inicialização, tornando o acesso ainda mais rápido. [Docs](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/On_Demand_Resources_Guide/index.html#//apple_ref/doc/uid/TP40015083-CH2-SW1)\n\n![TabsNews iOS](https://github.com/adonaipinheiro/TabNews/assets/20756362/46e41b1c-bd3d-4b65-9236-8a4c7072e7d2)\n\nPor padrão, as novas versões do React Native vem com este recurso ativado. Verifique se o seu está. Se não, selecione o `target -> Build settings -> Assets -> Enable On-Demand Resources`\n\n## 3. Configuração Android\nPara tornar seu aplicativo o menor possível, você deve habilitar a redução em seu build de lançamento para remover código e recursos não utilizados. Ao habilitar a redução, você também se beneficia da ofuscação , que reduz os nomes das classes e membros do seu aplicativo, e da otimização , que aplica estratégias mais agressivas para reduzir ainda mais o tamanho do seu aplicativo. [Docs](https://developer.android.com/build/shrink-code#groovy)\n\n### 3.1. Shrink, obfuscate, e otimização\nAcessaremos `android/app/build.grale` e habilitaremos duas opções: `enableSeparateBuildPerCPUArchitecture` e `enableProguardInReleaseBuilds`.\n\nCom o `enableSeparateBuildPerCPUArchitecture` ao gerarmos APK, conseguiremos notar o tamanho real que será distribuído para o usuário final. (Com o AAB não é necessário ativar essa opção, ele faz isso de maneira automática)\n\n`enableProguardInReleaseBuilds` irá ativar o uso do ProGuard, que ofuscará nosso código e nas novas versões do React Native também ativará o `minify`, responsável por tentar diminuir o tamanho dos nossos bundles finais.\n\n```js\ndef enableSeparateBuildPerCPUArchitecture = true\n\ndef enableProguardInReleaseBuilds = true\n\nandroid {\n    // Resto do código...\n    buildTypes {\n        debug {\n            signingConfig signingConfigs.debug\n        }\n        release {\n            signingConfig signingConfigs.debug\n            minifyEnabled enableProguardInReleaseBuilds\n            shrinkResources true\n            proguardFiles getDefaultProguardFile(\"proguard-android.txt\"), \"proguard-rules.pro\"\n        }\n    }\n}\n```\n\nPara realizar o build, primeiro iremos rodar o seguinte comando: `cd android && ./gradlew clean` para limparmos o projeto Android e garantirmos um build limpo.\n\n### 3.2.Comparação de APKs (Android Studio - APK Analyzer)\n\n`enableSeparateBuildPerCPUArchitecture = false` e `./gradlew assembleRelease` -> Comando para gerarmos uma APK sem divisão por tipo de arquitetura.\n\n![APK Analyzer](https://github.com/adonaipinheiro/TabNews/assets/20756362/6b98d55d-5dae-46c8-aed6-7748add803ff)\n\n**Notamos que nossa APK tem 17,8 MB de Download**\n\nAgora vamos ativar o recurso de separar por arquitetura e habilitar o minify, proguard e shrink. E rodamos o mesmo comando `./gradlew assembleRelease`\n\nPrimeira coisa que notamos é que agora temos mais do que um arquivo de APK\n\n![APKs](https://github.com/adonaipinheiro/TabNews/assets/20756362/c88fa03d-1567-438b-8eb6-ba12de9d7959)\n\n![APK Analyzer](https://github.com/adonaipinheiro/TabNews/assets/20756362/7b656e3b-9c4f-4995-af7e-84d351106500)\n\n**Notamos que nossa APK tem 4,8 MB de Download**\n\n### Uma diminuição percentual de 73%!\n\nCom essa pequena alteração, ganhamos 13 MB de download do usuário e conseguimos demonstrar como uma aplicação React Native, pode sim ter seu tamanho reduzido, claro que nunca será igual ao nativo, porém conseguimos chegar bem próximos disso.\n\n\n## 4. Ordenação de imports\n\nPara já deixarmos um padrão de importação, vamos utilizar alguns plugins do eslint e algumas configurações no nosso arquivo `.eslintrc.js`.\n\n1. Instalar as libs `yarn add -D eslint-plugin-import eslint-import-resolver-typescript`\n\n2. Modificar o arquivo `.eslintrc.js`:\n```js\nmodule.exports = {\n  root: true,\n  plugins: ['@typescript-eslint', 'prettier', 'import'],\n  extends: [\n    '@react-native-community',\n    'plugin:import/recommended',\n    'plugin:import/typescript',\n  ],\n  rules: {\n    'sort-imports': [\n      'error',\n      {\n        ignoreCase: false,\n        ignoreDeclarationSort: true,\n        ignoreMemberSort: false,\n        memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],\n        allowSeparatedGroups: true,\n      },\n    ],\n    'import/no-unresolved': 'error',\n    'import/no-named-as-default-member': 'off',\n    'import/order': [\n      'error',\n      {\n        groups: [\n          'builtin',\n          'external',\n          'internal',\n          ['sibling', 'parent'],\n          'index',\n          'unknown',\n        ],\n        'newlines-between': 'always',\n        alphabetize: {\n          order: 'asc',\n          caseInsensitive: true,\n        },\n      },\n    ],\n  },\n  settings: {\n    'import/resolver': {\n      typescript: {\n        project: './tsconfig.json',\n      },\n    },\n  },\n};\n```\n\n3. Adicionar configuração no arquivo `settings.json` do VSCode\n\n```json\n{\n  \"editor.formatOnSave\": false,\n  \"eslint.validate\": [\n    \"typescript\"\n  ],\n  \"editor.codeActionsOnSave\": {\n    \"source.fixAll\": true\n  }\n}\n```\n\n4. Adicionar comandos de lint no `package.json`\n\n```json\n{\n    \"lint\": \"eslint --ext ts,tsx ./src\",\n    \"lint:fix\": \"npm run lint -- --fix\",\n}\n```\n\n## 5. Configuração inicial dos paths alias\n\nEstaremos seguindo a [documentação](https://reactnative.dev/docs/typescript#using-custom-path-aliases-with-typescript) do React Native.\n\n1. Alteramos o arquivo `tsconfig.json`:\n```json\n{\n  \"extends\": \"@tsconfig/react-native/tsconfig.json\",\n  \"compilerOptions\": {\n    \"baseUrl\": \".\",\n    \"paths\": {\n      \"@screens\": [\"src/screens\"]\n      // Outros paths da aplicação\n    }\n  }\n}\n```\n\n2. Instalamos o plugin `module-resolver`\n\n`yarn add --dev babel-plugin-module-resolver`\n\n3. Configuramos o aquivo `babel.config.js`, lembrando que toda vez que adicionarmos um path novo, devemos reiniciar o bundle com o comando `yarn start --reset-cache` para que ele recarregue os paths configurados\n\n```js\nmodule.exports = {\n  presets: ['module:metro-react-native-babel-preset'],\n  plugins: [\n    [\n      'module-resolver',\n      {\n        root: ['.'],\n        extensions: ['.ios.js', '.android.js', '.js', '.ts', '.tsx', '.json'],\n        alias: {\n          '@screens': './src/screens',\n        },\n      },\n    ],\n  ],\n};\n```\n\nPara que possamos testar, vamos criar uma tela `src/screens/SignIn/index.tsx`.\n\n![Folders](https://github.com/adonaipinheiro/TabNews/assets/20756362/97495789-a061-448f-980f-9a803c405f9c)\n\nResultado esperado:\n\n![TabsNews iOS](https://github.com/adonaipinheiro/TabNews/assets/20756362/e2c18fb4-d642-443f-8c10-b5d574a1243a) ![TabsNews Android](https://github.com/adonaipinheiro/TabNews/assets/20756362/a10ab84a-cb03-45a9-b12c-6956dff4817d)\n\n[<- Anterior](https://www.tabnews.com.br/adonaipinheiro/tabnews-react-native-v0-0-2) | Próximo ->";
+import {Divider, ErrorScreen, LoadingScreen} from '@components';
+import {StackNavigationProps, StackParamList} from '@routes';
+import {useGetContentQuery} from '@store/services/tabNews';
+import {$COLORS} from '@utils';
 
 export function Post() {
+  const route = useRoute<RouteProp<StackParamList, 'Post'>>();
+  const {data, isLoading, refetch} = useGetContentQuery({
+    owner_username: route.params.owner_username,
+    slug: route.params.slug,
+  });
+
+  const navigation = useNavigation<StackNavigationProps>();
+
+  useEffect(() => {
+    navigation.setOptions({
+      headerTitle: route.params.title,
+      headerTitleAlign: 'center',
+      headerTitleStyle: {
+        maxWidth: Dimensions.get('window').width / 2.2,
+      },
+      // eslint-disable-next-line react/no-unstable-nested-components
+      headerRight: ({tintColor}) => {
+        return (
+          <View style={styles.contentArea}>
+            <View style={styles.tabcoinsIcon} />
+            <Divider size={5} horizontal />
+            <Text style={styles.contentText}>
+              {route.params.tabcoins}
+            </Text>
+            <View style={styles.separator} />
+            <Icon name="comments" light size={14} color={tintColor} />
+            <Divider size={5} horizontal />
+            <Text style={styles.contentText}>
+              {route.params.children_deep_count}
+            </Text>
+            <View style={styles.separator} />
+          </View>
+        );
+      },
+    });
+  }, [
+    navigation,
+    route.params.children_deep_count,
+    route.params.owner_username,
+    route.params.tabcoins,
+    route.params.title,
+  ]);
+
+  if (isLoading) {
+    return <LoadingScreen />;
+  }
+
+  if (!data) {
+    return <ErrorScreen retry={refetch} />;
+  }
+
   return (
-    <SafeAreaView style={{flex: 1, flexDirection: 'column'}}>
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={{height: '100%', padding: 10}}>
-        <Markdown>{text}</Markdown>
-      </ScrollView>
-    </SafeAreaView>
+    <ScrollView
+      contentInsetAdjustmentBehavior="automatic"
+      style={{flex: 1, padding: 10, marginBottom: 20}}>
+      <Markdown style={markdownStyles}>
+        {`# ${data.title}\n${data.body}`}
+      </Markdown>
+    </ScrollView>
   );
 }
+
+const markdownStyles = StyleSheet.create({
+  heading1: {
+    fontSize: 32,
+    fontWeight: '600',
+    marginBottom: 10,
+    color: $COLORS.primary,
+  },
+  heading2: {
+    fontSize: 24,
+    fontWeight: '600',
+    borderBottomWidth: 1,
+    borderBottomColor: $COLORS.grayDark,
+    marginBottom: 10,
+    marginTop: 20,
+  },
+  heading3: {
+    fontSize: 18,
+    fontWeight: '600',
+  },
+  heading4: {
+    fontSize: 16,
+  },
+  heading5: {
+    fontSize: 14,
+  },
+  heading6: {
+    fontSize: 12,
+  },
+  text: {
+    color: $COLORS.primary,
+  },
+  image: {
+    borderRadius: 6,
+  },
+  code_inline: {
+    color: $COLORS.grayLight,
+    backgroundColor: $COLORS.primary,
+    borderRadius: 6,
+  },
+  code_block: {
+    color: $COLORS.grayLight,
+    backgroundColor: $COLORS.primary,
+    borderRadius: 6,
+  },
+  fence: {
+    color: $COLORS.grayLight,
+    backgroundColor: $COLORS.primary,
+    borderRadius: 6,
+  },
+  paragraph: {
+    fontSize: 18,
+  },
+  list_item: {
+    marginVertical: 10,
+    fontSize: 16,
+  },
+  link: {
+    color: $COLORS.link,
+  },
+  blocklink: {
+    color: $COLORS.link,
+  },
+});
+
+const styles = StyleSheet.create({
+  contentArea: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+  },
+  tabcoinsIcon: {
+    backgroundColor: $COLORS.link,
+    width: 14,
+    height: 14,
+    borderRadius: 3,
+  },
+  contentText: {
+    fontWeight: '600',
+    fontSize: 16,
+    color: $COLORS.white,
+  },
+  separator: {
+    marginHorizontal: 5,
+    width: 2,
+    height: 2,
+    borderRadius: 1,
+    backgroundColor: $COLORS.text,
+  },
+});
