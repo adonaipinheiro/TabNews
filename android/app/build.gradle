@@ -127,10 +127,10 @@ android {
             keyPassword 'android'
         }
         release {
-            storeFile file('release.keystore')
-            storePassword 't@bn3w5'
-            keyAlias 'upload'
-            keyPassword 't@bn3w5'
+            storeFile rootProject.file("app/release.keystore")
+            storePassword System.getProperty("APPCENTER_KEYSTORE_PASSWORD")
+            keyAlias System.getProperty("APPCENTER_KEY_ALIAS")
+            keyPassword System.getProperty("APPCENTER_KEY_PASSWORD")
         }
     }
     buildTypes {
