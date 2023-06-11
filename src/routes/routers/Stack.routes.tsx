@@ -47,7 +47,7 @@ export function StackRouter() {
   return (
     <Stack.Navigator screenOptions={screenOptions}>
       <Stack.Screen
-        name="TabNews"
+        name="DrawerRouter"
         component={DrawerRouter}
         options={tabNewsOptions}
       />

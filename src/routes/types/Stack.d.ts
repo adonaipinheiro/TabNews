@@ -18,7 +18,7 @@ export type StackParamList = {
     url: string;
     title: string;
   };
-  TabNews: NavigatorScreenParams<DrawerParamList>;
+  DrawerRouter: NavigatorScreenParams<DrawerParamList>;
 };
 
 export type StackNavigationProps =

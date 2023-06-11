@@ -11,7 +11,7 @@ import {
 import styles from './styles';
 import {useRelevant} from './useRelevant';
 
-export function TabNews() {
+export function Relevant() {
   const {
     prevPage,
     data,

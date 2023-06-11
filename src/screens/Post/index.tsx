@@ -6,6 +6,7 @@ import {
 import React, {useEffect} from 'react';
 import {
   Dimensions,
+  SafeAreaView,
   ScrollView,
   StyleSheet,
   Text,
@@ -72,17 +73,20 @@ export function Post() {
   }
 
   return (
-    <ScrollView
-      contentInsetAdjustmentBehavior="automatic"
-      style={{flex: 1, padding: 10, marginBottom: 20}}>
-      <Markdown style={markdownStyles}>
-        {`# ${data.title}\n${data.body}`}
-      </Markdown>
-    </ScrollView>
+    <SafeAreaView style={{flex: 1}}>
+      <ScrollView style={{flex: 1, padding: 10}}>
+        <Markdown style={markdownStyles}>
+          {`# ${data.title}\n${data.body}`}
+        </Markdown>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 const markdownStyles = StyleSheet.create({
+  body: {
+    paddingBottom: 80,
+  },
   heading1: {
     fontSize: 32,
     fontWeight: '600',

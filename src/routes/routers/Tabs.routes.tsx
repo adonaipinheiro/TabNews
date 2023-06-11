@@ -4,7 +4,7 @@ import {
 } from '@react-navigation/material-top-tabs';
 import React from 'react';
 
-import {Recent, TabNews} from '@screens';
+import {Recent, Relevant} from '@screens';
 import {$COLORS} from '@utils';
 
 import {TabParamList} from '../types/Tabs';
@@ -41,7 +41,7 @@ export function TabsRouter() {
     <Tab.Navigator screenOptions={screenOptions}>
       <Tab.Screen
         name="Relevant"
-        component={TabNews}
+        component={Relevant}
         options={relevantOptions}
       />
       <Tab.Screen
