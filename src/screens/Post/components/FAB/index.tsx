@@ -131,5 +131,13 @@ const styles = StyleSheet.create({
     borderRadius: 28,
     justifyContent: 'center',
     alignItems: 'center',
+    shadowColor: $COLORS.gray300,
+    shadowOffset: {
+      width: 1,
+      height: 1,
+    },
+    shadowOpacity: 0.9,
+    shadowRadius: 1.41,
+    elevation: 5,
   },
 });

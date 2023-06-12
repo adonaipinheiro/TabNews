@@ -33,6 +33,8 @@ export function usePost() {
     });
   }
 
+  function onPressComments() {}
+
   useEffect(() => {
     const {title, children_deep_count, tabcoins} = route.params;
     navigation.setOptions({
