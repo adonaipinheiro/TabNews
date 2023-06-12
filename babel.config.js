@@ -22,6 +22,7 @@ module.exports = {
           '@store': './src/store',
           '@routes': './src/routes',
           '@hooks': './src/hooks',
+          '@analytics': './src/analytics',
         },
       },
     ],

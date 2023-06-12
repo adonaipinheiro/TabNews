@@ -10,7 +10,8 @@
       "@hooks": ["src/hooks"],
       "@store": ["src/store"],
       "@store/*": ["src/store/*"],
-      "@utils": ["src/utils"]
+      "@utils": ["src/utils"],
+      "@analytics": ["src/analytics"]
     },
     "lib": ["ES2022"]
   }
