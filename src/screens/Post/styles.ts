@@ -4,6 +4,7 @@ import {$COLORS} from '@utils';
 
 const markdownStyles = StyleSheet.create({
   body: {
+    paddingTop: 16,
     paddingBottom: 80,
   },
   heading1: {
@@ -72,10 +73,11 @@ const markdownStyles = StyleSheet.create({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    position: 'relative',
   },
   scrollView: {
     flex: 1,
-    padding: 10,
+    padding: 16,
   },
 });
 

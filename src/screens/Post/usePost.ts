@@ -13,12 +13,25 @@ import {renderHeaderRight} from './components';
 
 export function usePost() {
   const route = useRoute<RouteProp<StackParamList, 'Post'>>();
+  const navigation = useNavigation<StackNavigationProps>();
   const {data, isLoading, refetch, error} = useGetContentQuery({
     owner_username: route.params.owner_username,
     slug: route.params.slug,
   });
 
-  const navigation = useNavigation<StackNavigationProps>();
+  function onPressLike() {
+    navigation.setParams({
+      ...route.params,
+      tabcoins: route.params.tabcoins + 1,
+    });
+  }
+
+  function onPressUnlike() {
+    navigation.setParams({
+      ...route.params,
+      tabcoins: route.params.tabcoins - 1,
+    });
+  }
 
   useEffect(() => {
     const {title, children_deep_count, tabcoins} = route.params;
@@ -42,5 +55,7 @@ export function usePost() {
     isLoading,
     refetch,
     error,
+    onPressLike,
+    onPressUnlike,
   };
 }
