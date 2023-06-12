@@ -59,5 +59,6 @@ export function usePost() {
     error,
     onPressLike,
     onPressUnlike,
+    onPressComments,
   };
 }

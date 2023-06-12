@@ -33,5 +33,8 @@ export const tabnewsApi = createApi({
   }),
 });
 
-export const {useGetContentListQuery, useGetContentQuery} =
-  tabnewsApi;
+export const {
+  useGetContentListQuery,
+  useGetContentQuery,
+  usePrefetch,
+} = tabnewsApi;

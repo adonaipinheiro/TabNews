@@ -1,6 +1,9 @@
-import {useState} from 'react';
+import {useCallback, useEffect, useState} from 'react';
 
-import {useGetContentListQuery} from '@store/services/tabNews';
+import {
+  useGetContentListQuery,
+  usePrefetch,
+} from '@store/services/tabNews';
 
 export function useRecent() {
   const [page, setPage] = useState<number>(1);
@@ -11,6 +14,12 @@ export function useRecent() {
       perPage,
       strategy: 'new',
     });
+
+  const prefetch = usePrefetch('getContentList');
+
+  const prefetchNext = useCallback(() => {
+    prefetch({page: page + 1, perPage, strategy: 'new'});
+  }, [prefetch, page]);
 
   function onRefresh() {
     setPage(1);
@@ -26,6 +35,10 @@ export function useRecent() {
     setPage(page - 1);
     refetch();
   }
+
+  useEffect(() => {
+    prefetchNext();
+  }, [page, prefetchNext]);
 
   return {
     data,
