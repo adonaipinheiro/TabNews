@@ -12,6 +12,10 @@ export async function logScreen(screenName: string | undefined) {
   }
 }
 
+export async function logAnalytics(event: string) {
+  await analytics().logEvent(event);
+}
+
 export function logCrashlytics(error: string) {
   crashlytics().log(error);
 }
