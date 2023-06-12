@@ -1,0 +1,22 @@
+diff --git a/node_modules/react-native-markdown-display/src/index.d.ts b/node_modules/react-native-markdown-display/src/index.d.ts
+index f0daf4a..11549c3 100644
+--- a/node_modules/react-native-markdown-display/src/index.d.ts
++++ b/node_modules/react-native-markdown-display/src/index.d.ts
+@@ -89,6 +89,7 @@ export interface MarkdownProps {
+   mergeStyle?: boolean;
+   debugPrintTree?: boolean;
+   onLinkPress?: (url: string) => boolean;
++  children?: string;
+ }
+ 
+ type MarkdownStatic = ComponentType<MarkdownProps>;
+diff --git a/node_modules/react-native-markdown-display/src/index.js b/node_modules/react-native-markdown-display/src/index.js
+index 59afec7..d7e24f1 100644
+--- a/node_modules/react-native-markdown-display/src/index.js
++++ b/node_modules/react-native-markdown-display/src/index.js
+@@ -228,4 +228,4 @@ Markdown.propTypes = {
+   debugPrintTree: PropTypes.bool,
+ };
+ 
+-export default Markdown;
++export {Markdown};

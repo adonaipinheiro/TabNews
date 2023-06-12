@@ -1,3 +1,18 @@
 {
-  "extends": "@tsconfig/react-native/tsconfig.json"
+  "extends": "@tsconfig/react-native/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@screens": ["src/screens"],
+      "@assets": ["src/assets"],
+      "@components": ["src/components"],
+      "@routes": ["src/routes"],
+      "@hooks": ["src/hooks"],
+      "@store": ["src/store"],
+      "@store/*": ["src/store/*"],
+      "@utils": ["src/utils"],
+      "@analytics": ["src/analytics"]
+    },
+    "lib": ["ES2022"]
+  }
 }

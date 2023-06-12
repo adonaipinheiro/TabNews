@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>823279903364-l5e8riju0mt8vbjoue21rb3uam4pbs39.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.823279903364-l5e8riju0mt8vbjoue21rb3uam4pbs39</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCreql3_LRGc93jFqJzRQU0dUhD5bPbR10</string>
+	<key>GCM_SENDER_ID</key>
+	<string>823279903364</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>br.com.tabnews</string>
+	<key>PROJECT_ID</key>
+	<string>tabnews-app</string>
+	<key>STORAGE_BUCKET</key>
+	<string>tabnews-app.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:823279903364:ios:b3df68bad95a0a4a9bd8d1</string>
+</dict>
+</plist>

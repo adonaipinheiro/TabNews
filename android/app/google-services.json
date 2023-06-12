@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "823279903364",
+    "project_id": "tabnews-app",
+    "storage_bucket": "tabnews-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:823279903364:android:427d41d5200c1cc79bd8d1",
+        "android_client_info": {
+          "package_name": "br.com.tabnews"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "823279903364-5i8clcudif7v4ugv0qbg9q29d2h3pme2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAI60HudZJYuwLBVRhiqv-asibR3lQHxi8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "823279903364-5i8clcudif7v4ugv0qbg9q29d2h3pme2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
