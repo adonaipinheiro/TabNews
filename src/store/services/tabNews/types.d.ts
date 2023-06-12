@@ -32,3 +32,14 @@ export type GetContentResponseType = {
   body: string;
   title: string;
 };
+
+export type GetContentChildrenRequestType = {
+  owner_username: string;
+  slug: string;
+};
+
+export type GetContentChildrenResponseType = {
+  body: string;
+  title: string;
+  owner_username: string;
+};

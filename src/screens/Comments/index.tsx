@@ -5,20 +5,11 @@ import {Markdown} from 'react-native-markdown-display';
 import {ErrorScreen, LoadingScreen} from '@components';
 import {markdownStyles} from '@utils';
 
-import {FAB} from './components';
 import styles from './styles';
-import {usePost} from './usePost';
+import {useComments} from './useComments';
 
-export function Post() {
-  const {
-    data,
-    isLoading,
-    error,
-    refetch,
-    onPressLike,
-    onPressUnlike,
-    onPressComments,
-  } = usePost();
+export function Comments() {
+  const {data, isLoading, error, refetch} = useComments();
 
   if (isLoading) {
     return <LoadingScreen />;
@@ -31,15 +22,12 @@ export function Post() {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollView}>
-        <Markdown style={markdownStyles}>
-          {`# ${data.title}\n${data.body}`}
-        </Markdown>
+        {data.map(comment => {
+          return (
+            <Markdown style={markdownStyles}>{comment.body}</Markdown>
+          );
+        })}
       </ScrollView>
-      <FAB
-        onLike={onPressLike}
-        onUnlike={onPressUnlike}
-        onComments={onPressComments}
-      />
     </SafeAreaView>
   );
 }

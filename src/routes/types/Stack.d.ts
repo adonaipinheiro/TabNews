@@ -14,6 +14,10 @@ export type StackParamList = {
     tabcoins: number;
     children_deep_count: number;
   };
+  Comments: {
+    slug: string;
+    owner_username: string;
+  };
   Institutional: {
     url: string;
     title: string;
