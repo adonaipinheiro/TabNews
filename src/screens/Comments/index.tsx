@@ -22,9 +22,11 @@ export function Comments() {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollView}>
-        {data.map(comment => {
+        {data.map((comment, index) => {
           return (
-            <Markdown style={markdownStyles}>{comment.body}</Markdown>
+            <Markdown key={index} style={markdownStyles}>
+              {comment.body}
+            </Markdown>
           );
         })}
       </ScrollView>
