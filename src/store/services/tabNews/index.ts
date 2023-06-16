@@ -4,6 +4,8 @@ import {
 } from '@reduxjs/toolkit/query/react';
 
 import {
+  GetContentChildrenRequestType,
+  GetContentChildrenResponseType,
   GetContentListRequestType,
   GetContentListResponseType,
   GetContentRequestType,
@@ -30,11 +32,19 @@ export const tabnewsApi = createApi({
       query: ({owner_username, slug}) =>
         `contents/${owner_username}/${slug}`,
     }),
+    getContentChildren: builder.query<
+      GetContentChildrenResponseType[],
+      GetContentChildrenRequestType
+    >({
+      query: ({owner_username, slug}) =>
+        `contents/${owner_username}/${slug}/children`,
+    }),
   }),
 });
 
 export const {
   useGetContentListQuery,
   useGetContentQuery,
+  useGetContentChildrenQuery,
   usePrefetch,
 } = tabnewsApi;

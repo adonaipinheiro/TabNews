@@ -5,3 +5,4 @@ export {Relevant} from './Relevant';
 export {Recent} from './Recent';
 export {Institutional} from './Institutional';
 export {Post} from './Post';
+export {Comments} from './Comments';

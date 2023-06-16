@@ -5,6 +5,7 @@ import {
 import React from 'react';
 
 import {
+  Comments,
   Institutional,
   Post,
   RecoverPass,
@@ -43,6 +44,12 @@ const postOptions: StackNavigationOptions = {
   animationEnabled: true,
 };
 
+const commentsOptions: StackNavigationOptions = {
+  presentation: 'modal',
+  animationEnabled: true,
+  headerTitle: 'Comentários',
+};
+
 export function StackRouter() {
   return (
     <Stack.Navigator screenOptions={screenOptions}>
@@ -60,6 +67,11 @@ export function StackRouter() {
         name="Post"
         options={postOptions}
         component={Post}
+      />
+      <Stack.Screen
+        name="Comments"
+        options={commentsOptions}
+        component={Comments}
       />
       <Stack.Screen name="SignIn" component={SignIn} />
       <Stack.Screen name="SignUp" component={SignUp} />

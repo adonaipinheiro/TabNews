@@ -7,7 +7,10 @@ import {useEffect} from 'react';
 import {Dimensions} from 'react-native';
 
 import {StackNavigationProps, StackParamList} from '@routes';
-import {useGetContentQuery} from '@store/services/tabNews';
+import {
+  useGetContentQuery,
+  usePrefetch,
+} from '@store/services/tabNews';
 
 import {renderHeaderRight} from './components';
 
@@ -15,6 +18,11 @@ export function usePost() {
   const route = useRoute<RouteProp<StackParamList, 'Post'>>();
   const navigation = useNavigation<StackNavigationProps>();
   const {data, isLoading, refetch, error} = useGetContentQuery({
+    owner_username: route.params.owner_username,
+    slug: route.params.slug,
+  });
+  const prefetch = usePrefetch('getContentChildren');
+  prefetch({
     owner_username: route.params.owner_username,
     slug: route.params.slug,
   });
@@ -33,7 +41,12 @@ export function usePost() {
     });
   }
 
-  function onPressComments() {}
+  function onPressComments() {
+    navigation.navigate('Comments', {
+      owner_username: route.params.owner_username,
+      slug: route.params.slug,
+    });
+  }
 
   useEffect(() => {
     const {title, children_deep_count, tabcoins} = route.params;
