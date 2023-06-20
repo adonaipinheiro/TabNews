@@ -7,9 +7,9 @@ import {
   LoadingScreen,
   Pagination,
 } from '@components';
+import {usePosts} from '@hooks';
 
 import styles from './styles';
-import {useRecent} from './useRecent';
 
 export function Recent() {
   const {
@@ -23,7 +23,8 @@ export function Recent() {
     refetch,
     perPage,
     page,
-  } = useRecent();
+    scrollRef,
+  } = usePosts('new');
 
   return (
     <SafeAreaView style={styles.container}>
@@ -34,6 +35,7 @@ export function Recent() {
       {data && !error && !(isLoading || isFetching) && (
         <ContentList
           data={data}
+          scrollRef={scrollRef}
           currentPage={page}
           perPage={perPage}
           refresh={onRefresh}

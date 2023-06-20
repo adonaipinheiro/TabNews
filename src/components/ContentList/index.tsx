@@ -1,7 +1,10 @@
-import React, {memo} from 'react';
+import React, {LegacyRef, memo} from 'react';
 import {FlatList} from 'react-native';
 
-import {GetContentListResponseType} from '@store/services/tabNews/types';
+import {
+  ContentListType,
+  GetContentListResponseType,
+} from '@store/services/tabNews/types';
 
 import {ContentItem} from './ContentItem';
 import styles from './styles';
@@ -14,6 +17,7 @@ interface ContentListProps {
   loading: boolean;
   perPage: number;
   currentPage: number;
+  scrollRef: LegacyRef<FlatList<ContentListType>>;
 }
 
 export const ContentList = memo(
@@ -23,9 +27,11 @@ export const ContentList = memo(
     loading,
     perPage,
     currentPage,
+    scrollRef,
   }: ContentListProps) => {
     return (
       <FlatList
+        ref={scrollRef}
         data={data}
         style={styles.flatList}
         contentContainerStyle={styles.container}
