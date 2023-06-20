@@ -6,7 +6,7 @@ import {
   usePrefetch,
 } from '@store/services/tabNews';
 
-import {useRemoteConfig} from './useRemoteConfig';
+import {useRemoteConfig} from '../../hooks/useRemoteConfig';
 
 type strategyTypes = 'relevant' | 'old' | 'new';
 

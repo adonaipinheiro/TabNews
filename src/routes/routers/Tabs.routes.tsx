@@ -4,7 +4,7 @@ import {
 } from '@react-navigation/material-top-tabs';
 import React from 'react';
 
-import {Recent, Relevant} from '@screens';
+import {Posts} from '@screens';
 import {$COLORS} from '@utils';
 
 import {TabParamList} from '../types/Tabs';
@@ -39,16 +39,12 @@ const Tab = createMaterialTopTabNavigator<TabParamList>();
 export function TabsRouter() {
   return (
     <Tab.Navigator screenOptions={screenOptions}>
-      <Tab.Screen
-        name="Relevant"
-        component={Relevant}
-        options={relevantOptions}
-      />
-      <Tab.Screen
-        name="Recent"
-        component={Recent}
-        options={recentOptions}
-      />
+      <Tab.Screen name="Relevant" options={relevantOptions}>
+        {() => <Posts strategy="relevant" />}
+      </Tab.Screen>
+      <Tab.Screen name="Recent" options={recentOptions}>
+        {() => <Posts strategy="new" />}
+      </Tab.Screen>
     </Tab.Navigator>
   );
 }
