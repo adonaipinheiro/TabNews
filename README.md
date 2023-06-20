@@ -33,3 +33,16 @@ Para o projeto, estou seguindo o **`hook pattern`**, que funciona basicamente ig
 O projeto está aberto para contribuição, no momento o que é mais necessário, são os testes unitários. A expectativa é que atinja ~85% de cobertura total do código.
 
 Mas está aberto para qualquer sugestão. :D
+
+## Baixe
+
+Aplicativo disponível na Google Play e App Store
+
+<img width=100 title="Google Play" alt="Google Play" src="https://github.com/adonaipinheiro/TabNews/assets/20756362/165cc16a-a889-4e7c-8a79-863f402135c6">
+
+<a href="https://play.google.com/store/apps/details?id=br.com.tabnews" target="_blank">TabNews Google Play</a>
+
+<img width=100 title="App Store" alt="App Store" src="https://github.com/adonaipinheiro/TabNews/assets/20756362/4d6f8529-e599-43cd-b7fc-03dbafe6e794">
+
+<a href="https://play.google.com/store/apps/details?id=br.com.tabnews" target="_blank">TabNews App Store</a>
+
