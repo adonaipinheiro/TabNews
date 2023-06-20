@@ -6,22 +6,27 @@ import {
   usePrefetch,
 } from '@store/services/tabNews';
 
-export function useRelevant() {
+import {useRemoteConfig} from './useRemoteConfig';
+
+type strategyTypes = 'relevant' | 'old' | 'new';
+
+export function usePosts(strategy: strategyTypes) {
+  const {getNumber} = useRemoteConfig();
   const [page, setPage] = useState<number>(1);
-  const perPage = 10;
+  const perPage = getNumber('perPage');
   const {data, isLoading, error, refetch, isFetching} =
     useGetContentListQuery({
       page: page,
       perPage,
-      strategy: 'relevant',
+      strategy,
     });
   const scrollRef = useRef<FlatList>(null);
 
   const prefetch = usePrefetch('getContentList');
 
   const prefetchNext = useCallback(() => {
-    prefetch({page: page + 1, perPage, strategy: 'relevant'});
-  }, [prefetch, page]);
+    prefetch({page: page + 1, perPage, strategy});
+  }, [prefetch, page, perPage, strategy]);
 
   function onRefresh() {
     setPage(1);

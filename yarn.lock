@@ -1778,6 +1778,11 @@
   resolved "https://registry.yarnpkg.com/@react-native-firebase/perf/-/perf-18.0.0.tgz#01227635a15c0c9e50a49f8c10eba93ab5a33795"
   integrity sha512-ZOfQzbEBqaYICxnLwpy+jtgy45bAvemQUrnfkcOu8kzimvPTjsOWU0Cm0MFSSTKxQ4d4CdP33vhrzvCSA20TeA==
 
+"@react-native-firebase/remote-config@18.0.0":
+  version "18.0.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/remote-config/-/remote-config-18.0.0.tgz#0d7c9294939101433c1c57636855820c4326acf9"
+  integrity sha512-NYfSjn1NT5S3eJvI4mmVhRNLNiRQUCkl9FoZVQi7yzLe24NSWxQVOmOx7HW6iKJcpomVoTz0GHDBzaDzWDUKgA==
+
 "@react-native/assets@1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@react-native/assets/-/assets-1.0.0.tgz#c6f9bf63d274bafc8e970628de24986b30a55c8e"
@@ -4723,7 +4728,7 @@ istanbul-reports@^3.1.3:
     html-escaper "^2.0.0"
     istanbul-lib-report "^3.0.0"
 
-jail-monkey@^2.8.0:
+jail-monkey@2.8.0:
   version "2.8.0"
   resolved "https://registry.yarnpkg.com/jail-monkey/-/jail-monkey-2.8.0.tgz#ff8ce7e57c438c9351d6c97aefe1dce3269220c7"
   integrity sha512-mz0sldKOEnt7qpqLLYM9Rwq9zGuGtj5nihz87KWBSy6PR9eu0cmyPkW3b+Exw4iVivcb2bFf6uVq0Q9aNgdIhw==
@@ -6513,7 +6518,7 @@ react-native-codegen@^0.71.5:
     jscodeshift "^0.13.1"
     nullthrows "^1.1.1"
 
-react-native-exit-app@^1.1.0:
+react-native-exit-app@1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/react-native-exit-app/-/react-native-exit-app-1.1.0.tgz#5ec082152974240e2d6a93f1608efb49a4385f21"
   integrity sha512-Spne19zfMfJvnUTX909EHUqWMk69rATtLJq9XMBGpNSHhx0M7v5yetx2Z87egBhLOqQm+CWfD/oxWzDG8rbIQA==
