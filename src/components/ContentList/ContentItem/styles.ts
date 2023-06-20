@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: $COLORS.white,
     borderWidth: 1,
-    borderColor: $COLORS.grayDark,
+    borderColor: $COLORS.blackWithOpacity(1),
     borderRadius: 6,
     padding: 10,
     shadowColor: $COLORS.blackWithOpacity(9),
