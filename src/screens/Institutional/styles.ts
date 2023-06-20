@@ -7,6 +7,9 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: $COLORS.white,
   },
+  webView: {
+    margin: 16,
+  },
 });
 
 export default styles;

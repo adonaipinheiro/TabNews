@@ -1,6 +1,7 @@
 import React from 'react';
-import {SafeAreaView, ScrollView} from 'react-native';
+import {ScrollView} from 'react-native';
 import {Markdown} from 'react-native-markdown-display';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 import {ErrorScreen, LoadingScreen} from '@components';
 import {markdownStyles} from '@utils';

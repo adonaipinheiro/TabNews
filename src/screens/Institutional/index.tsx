@@ -16,6 +16,7 @@ export function Institutional() {
         javaScriptEnabled
         startInLoadingState
         onMessage={_ => {}}
+        style={styles.webView}
       />
     </SafeAreaView>
   );

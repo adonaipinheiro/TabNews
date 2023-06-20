@@ -11,9 +11,9 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   prevAndNextPage: {
-    width: 30,
-    height: 30,
-    borderRadius: 15,
+    width: 44,
+    height: 44,
+    borderRadius: 22,
     backgroundColor: $COLORS.grayDark,
     justifyContent: 'center',
     alignItems: 'center',
@@ -24,9 +24,9 @@ const styles = StyleSheet.create({
     color: $COLORS.primary,
   },
   currentPage: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
+    width: 52,
+    height: 52,
+    borderRadius: 26,
     backgroundColor: $COLORS.primary,
     justifyContent: 'center',
     alignItems: 'center',
@@ -37,8 +37,8 @@ const styles = StyleSheet.create({
     color: $COLORS.headerText,
   },
   emptyPrev: {
-    width: 30,
-    height: 30,
+    width: 44,
+    height: 44,
   },
 });
 

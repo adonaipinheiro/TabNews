@@ -6,7 +6,8 @@ import {
 } from '@react-navigation/drawer';
 import {DrawerActions, useNavigation} from '@react-navigation/native';
 import React from 'react';
-import {SafeAreaView, ScrollView, Text, View} from 'react-native';
+import {ScrollView, Text, View} from 'react-native';
+import {SafeAreaView} from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
 import {Divider} from '@components';
