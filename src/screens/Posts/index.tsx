@@ -31,7 +31,9 @@ export function Posts({strategy}: PostsProps) {
   } = usePosts(strategy);
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView
+      edges={['bottom', 'left', 'right']}
+      style={styles.container}>
       {(isLoading || isFetching) && <LoadingScreen />}
       {!(isLoading || isFetching) && error && (
         <ErrorScreen retry={refetch} />

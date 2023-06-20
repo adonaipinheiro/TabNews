@@ -14,6 +14,8 @@ const styles = StyleSheet.create({
     backgroundColor: $COLORS.primary,
     paddingTop: Platform.OS === 'ios' ? 44 : 0,
     padding: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   headerContent: {
     padding: 10,
@@ -31,9 +33,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   signInUpText: {
-    fontSize: 14,
+    fontSize: 18,
     fontWeight: '600',
     color: $COLORS.headerText,
+  },
+  icon: {
+    width: 30,
   },
 });
 

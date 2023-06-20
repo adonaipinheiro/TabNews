@@ -23,7 +23,7 @@ const renderIcon = (name: string, color: string) => (
     color={color}
     size={14}
     light
-    style={{width: 30}}
+    style={styles.icon}
   />
 );
 
@@ -49,20 +49,19 @@ export const DrawerMenu = (props: DrawerContentComponentProps) => {
 
   return (
     <View style={styles.container}>
-      {/*<View style={styles.headerContainer}>
-        <SafeAreaView style={styles.headerContent}>
+      <View style={styles.headerContainer}>
+        <SafeAreaView
+          edges={['left', 'right']}
+          style={styles.headerContent}>
           <View style={styles.iconArea}>
             <Icon solid name="user" size={24} color={$COLORS.black} />
           </View>
           <Divider size={14} />
-          <Text
-            onPress={() => navigate('SignIn')}
-            style={styles.signInUpText}>
+          <Text onPress={() => {}} style={styles.signInUpText}>
             TabNews
           </Text>
         </SafeAreaView>
-  </View>*/}
-      <SafeAreaView />
+      </View>
       <Divider size={10} />
       <ScrollView style={styles.scrollView}>
         <DrawerItemList {...props} />
