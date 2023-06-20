@@ -7,11 +7,15 @@ import {
   LoadingScreen,
   Pagination,
 } from '@components';
-import {usePosts} from '@hooks';
 
 import styles from './styles';
+import {usePosts} from './usePosts';
 
-export function Recent() {
+interface PostsProps {
+  strategy: 'relevant' | 'old' | 'new';
+}
+
+export function Posts({strategy}: PostsProps) {
   const {
     prevPage,
     data,
@@ -24,10 +28,12 @@ export function Recent() {
     perPage,
     page,
     scrollRef,
-  } = usePosts('new');
+  } = usePosts(strategy);
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView
+      edges={['bottom', 'left', 'right']}
+      style={styles.container}>
       {(isLoading || isFetching) && <LoadingScreen />}
       {!(isLoading || isFetching) && error && (
         <ErrorScreen retry={refetch} />

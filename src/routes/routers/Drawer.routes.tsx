@@ -40,6 +40,7 @@ const screenOptions: DrawerNavigationOptions = {
     fontSize: 14,
     marginLeft: -20,
   },
+  swipeEdgeWidth: 40,
 };
 
 const tabRouterOptions: DrawerNavigationOptions = {

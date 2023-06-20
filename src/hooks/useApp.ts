@@ -11,10 +11,10 @@ export function useApp() {
   const setupApp = useCallback(async () => {
     await configureRemoteConfig();
     SplashScreen.hide();
+    logCrashlytics('App mounted');
   }, [configureRemoteConfig]);
 
   useLayoutEffect(() => {
     setupApp();
-    logCrashlytics('App mounted');
   }, [setupApp]);
 }

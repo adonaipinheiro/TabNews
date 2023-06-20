@@ -30,7 +30,9 @@ export function Post() {
   }
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView
+      edges={['bottom', 'left', 'right']}
+      style={styles.container}>
       <ScrollView style={styles.scrollView}>
         <Markdown style={markdownStyles}>
           {`# ${data.title}\n${data.body}`}
