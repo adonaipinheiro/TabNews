@@ -44,5 +44,6 @@ Aplicativo disponível na Google Play e App Store
 
 <img width=100 title="App Store" alt="App Store" src="https://github.com/adonaipinheiro/TabNews/assets/20756362/4d6f8529-e599-43cd-b7fc-03dbafe6e794">
 
-<a href="https://play.google.com/store/apps/details?id=br.com.tabnews" target="_blank">TabNews App Store</a>
+<a href="https://apps.apple.com/br/app/tabnews-not%C3%ADcias/id6450368000" target="_blank">TabNews App Store</a>
+
 
