@@ -3,7 +3,7 @@ import {
   useNavigation,
   useRoute,
 } from '@react-navigation/native';
-import {useEffect} from 'react';
+import {useCallback, useEffect} from 'react';
 import {Dimensions} from 'react-native';
 
 import {StackNavigationProps, StackParamList} from '@routes';
@@ -41,12 +41,12 @@ export function usePost() {
     });
   }
 
-  function onPressComments() {
+  const onPressComments = useCallback(() => {
     navigation.navigate('Comments', {
       owner_username: route.params.owner_username,
       slug: route.params.slug,
     });
-  }
+  }, [navigation, route.params.owner_username, route.params.slug]);
 
   useEffect(() => {
     const {title, children_deep_count, tabcoins} = route.params;
@@ -61,9 +61,10 @@ export function usePost() {
           childrenDeepCount: children_deep_count,
           color: tintColor,
           tabCoins: tabcoins,
+          onPress: onPressComments,
         }),
     });
-  }, [navigation, route.params]);
+  }, [navigation, onPressComments, route.params]);
 
   return {
     data,

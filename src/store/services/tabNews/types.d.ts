@@ -42,4 +42,7 @@ export type GetContentChildrenResponseType = {
   body: string;
   title: string;
   owner_username: string;
+  published_at: string;
+  tabcoins: number;
+  children: GetContentChildrenResponseType[];
 };

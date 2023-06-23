@@ -1,5 +1,5 @@
 import React, {memo} from 'react';
-import {Text, View} from 'react-native';
+import {Text, TouchableOpacity, View} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
 import {Divider} from '@components';
@@ -11,12 +11,18 @@ interface HeaderRightProps {
   color: string | undefined;
   tabCoins: number;
   childrenDeepCount: number;
+  onPress(): void;
 }
 
 export const HeaderRight = memo(
-  ({childrenDeepCount, color, tabCoins}: HeaderRightProps) => {
+  ({
+    childrenDeepCount,
+    color,
+    tabCoins,
+    onPress,
+  }: HeaderRightProps) => {
     return (
-      <View style={styles.contentArea}>
+      <TouchableOpacity onPress={onPress} style={styles.contentArea}>
         <View style={styles.tabcoinsIcon} />
         <Divider size={5} horizontal />
         <Text style={styles.contentText}>{tabCoins}</Text>
@@ -30,7 +36,7 @@ export const HeaderRight = memo(
         <Divider size={5} horizontal />
         <Text style={styles.contentText}>{childrenDeepCount}</Text>
         <View style={styles.separator} />
-      </View>
+      </TouchableOpacity>
     );
   },
 );
@@ -39,9 +45,11 @@ export function renderHeaderRight({
   childrenDeepCount,
   color,
   tabCoins,
+  onPress,
 }: HeaderRightProps) {
   return (
     <HeaderRight
+      onPress={onPress}
       childrenDeepCount={childrenDeepCount}
       color={color}
       tabCoins={tabCoins}
