@@ -1,4 +1,19 @@
-# [TabNews](https://tabnews.com.br/) &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/adonaipinheiro/TabNews/blob/main/LICENSE) ![Build status](https://build.appcenter.ms/v0.1/apps/be3002c0-daa9-4fce-92df-1a3736745c90/branches/main/badge) ![Build status](https://build.appcenter.ms/v0.1/apps/f7435ffa-50ef-42d2-8d63-edd3f87b1464/branches/main/badge) ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
+<h1 align="center">
+  <a href="https://tabnews.com.br/">TabNews</a>
+</h1>
+
+<p align="center">
+  <img src="https://img.shields.io/github/package-json/dependency-version/adonaipinheiro/TabNews/react-native" alt="React Native" />
+  <img src="https://img.shields.io/github/package-json/dependency-version/adonaipinheiro/TabNews/react" alt="React" />
+  <img src="https://img.shields.io/badge/license-MIT-blue.svg"  alt="GitHub license" />
+  <img src="https://build.appcenter.ms/v0.1/apps/be3002c0-daa9-4fce-92df-1a3736745c90/branches/main/badge"  alt="Build status" />
+  <img src="https://build.appcenter.ms/v0.1/apps/f7435ffa-50ef-42d2-8d63-edd3f87b1464/branches/main/badge"  alt="Build status" />
+</p>
+<p align="center">
+  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"  alt="PRs Welcome" />
+  <img src="https://img.shields.io/github/languages/code-size/adonaipinheiro/TabNews" alt="TabNews" />
+  <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/adonaipinheiro/TabNews">
+</p>
 
 Aplicativo TabNews, desenvolvido em React Native.
 
