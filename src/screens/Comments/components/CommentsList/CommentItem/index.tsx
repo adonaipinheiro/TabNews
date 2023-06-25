@@ -37,6 +37,7 @@ export function CommentsItem({item, owner}: CommentsItemProps) {
           body: {
             ...markdownStyles.body,
             paddingBottom: 10,
+            paddingTop: 0,
           },
         }}>
         {item.body}

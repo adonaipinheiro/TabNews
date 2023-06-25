@@ -11,8 +11,6 @@ export function useComments() {
       slug: route.params.slug,
     });
 
-  console.log(data);
-
   return {
     data,
     isLoading,
