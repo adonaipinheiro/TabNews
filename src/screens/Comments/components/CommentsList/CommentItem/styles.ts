@@ -17,36 +17,24 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 1.41,
     elevation: 1,
+    marginBottom: 10,
   },
-  title: {
-    color: $COLORS.text,
-    fontWeight: '600',
-    fontSize: 15,
-  },
-  contentArea: {
-    flexWrap: 'wrap',
+  commentHeader: {
     flexDirection: 'row',
+    flexWrap: 'wrap',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    marginTop: 5,
   },
-  tabcoinsIcon: {
-    backgroundColor: $COLORS.link,
-    width: 14,
-    height: 14,
-    borderRadius: 3,
+  commentOwnerNameContainer: {
+    backgroundColor: $COLORS.blueLight300,
+    padding: 5,
+    borderRadius: 8,
   },
-  contentText: {
-    fontWeight: '500',
-    fontSize: 14,
-    color: $COLORS.blackWithOpacity(9),
+  commentOwnerText: {
+    color: $COLORS.link,
   },
-  separator: {
-    marginHorizontal: 5,
-    width: 2,
-    height: 2,
-    borderRadius: 1,
-    backgroundColor: $COLORS.text,
+  flatListContentChild: {
+    gap: 10,
   },
 });
 

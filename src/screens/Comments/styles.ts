@@ -3,11 +3,7 @@ import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 16,
-  },
-  scrollView: {
-    flex: 1,
-    padding: 16,
+    padding: 10,
   },
 });
 

@@ -1,9 +1,11 @@
 import React from 'react';
-import {FlatList, Text} from 'react-native';
+import {FlatList, Text, View} from 'react-native';
 import {Markdown} from 'react-native-markdown-display';
 
 import {GetContentChildrenResponseType} from '@store/services/tabNews/types';
-import {$COLORS, calculeDiffDate, markdownStyles} from '@utils';
+import {calculeDiffDate, markdownStyles} from '@utils';
+
+import styles from './styles';
 
 interface CommentsItemProps {
   item: GetContentChildrenResponseType;
@@ -12,15 +14,23 @@ interface CommentsItemProps {
 
 export function CommentsItem({item, owner}: CommentsItemProps) {
   return (
-    <>
-      <Text
-        style={{
-          backgroundColor: $COLORS.blueLight300,
-          color: $COLORS.blue,
-        }}>
-        {item.owner_username} {owner && `em resposta à ${owner}`}
-      </Text>
-      <Text>{calculeDiffDate(item.published_at)}</Text>
+    <View style={styles.container}>
+      <View style={styles.commentHeader}>
+        <View style={styles.commentOwnerNameContainer}>
+          <Text style={styles.commentOwnerText}>
+            {item.owner_username}
+          </Text>
+        </View>
+        {owner && (
+          <>
+            <Text> em resposta à </Text>
+            <View style={styles.commentOwnerNameContainer}>
+              <Text style={styles.commentOwnerText}>{owner}</Text>
+            </View>
+          </>
+        )}
+        <Text> {calculeDiffDate(item.published_at)}</Text>
+      </View>
       <Markdown
         style={{
           ...markdownStyles,
@@ -31,17 +41,16 @@ export function CommentsItem({item, owner}: CommentsItemProps) {
         }}>
         {item.body}
       </Markdown>
-      {item.children?.length > 0 && (
-        <FlatList
-          data={item.children}
-          renderItem={child => (
-            <CommentsItem
-              item={child.item}
-              owner={item.owner_username}
-            />
-          )}
-        />
-      )}
-    </>
+      <FlatList
+        data={item.children}
+        contentContainerStyle={styles.flatListContentChild}
+        renderItem={child => (
+          <CommentsItem
+            item={child.item}
+            owner={item.owner_username}
+          />
+        )}
+      />
+    </View>
   );
 }
