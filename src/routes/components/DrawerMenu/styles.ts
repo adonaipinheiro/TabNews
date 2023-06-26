@@ -40,6 +40,16 @@ const styles = StyleSheet.create({
   icon: {
     width: 30,
   },
+  versionArea: {
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'flex-start',
+    margin: 10,
+  },
+  versionText: {
+    color: $COLORS.blackWithOpacity(6),
+    fontSize: 12,
+  },
 });
 
 export default styles;

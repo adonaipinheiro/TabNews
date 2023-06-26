@@ -110,8 +110,8 @@ android {
         applicationId "br.com.tabnews"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
+        versionCode Integer.parseInt(VERSION_CODE)
+        versionName (VERSION_NAME)
     }
 
     splits {
