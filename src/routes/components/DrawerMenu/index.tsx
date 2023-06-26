@@ -51,9 +51,7 @@ export const DrawerMenu = (props: DrawerContentComponentProps) => {
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
-        <SafeAreaView
-          edges={['left', 'right']}
-          style={styles.headerContent}>
+        <SafeAreaView edges={['top']} style={styles.headerContent}>
           <View style={styles.iconArea}>
             <Icon solid name="user" size={24} color={$COLORS.black} />
           </View>
