@@ -74,5 +74,6 @@ export function usePost() {
     onPressLike,
     onPressUnlike,
     onPressComments,
+    owner_username: route.params.owner_username,
   };
 }
