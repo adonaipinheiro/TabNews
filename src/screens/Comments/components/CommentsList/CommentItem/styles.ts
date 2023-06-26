@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 1.41,
     elevation: 1,
+    marginBottom: 10,
   },
   commentHeader: {
     flexDirection: 'row',
