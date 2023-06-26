@@ -14,6 +14,7 @@ export function CommentsList({data}: CommentsListProps) {
   return (
     <FlatList
       data={data}
+      showsVerticalScrollIndicator={false}
       ListEmptyComponent={
         <EmptyScreen text="Essa publicação ainda não possui comentários" />
       }
@@ -25,6 +26,6 @@ export function CommentsList({data}: CommentsListProps) {
 
 const styles = StyleSheet.create({
   content: {
-    gap: 0,
+    gap: 10,
   },
 });
