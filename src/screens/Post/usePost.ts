@@ -5,6 +5,7 @@ import {
 } from '@react-navigation/native';
 import {useCallback, useEffect} from 'react';
 import {Dimensions} from 'react-native';
+import Share from 'react-native-share';
 
 import {StackNavigationProps, StackParamList} from '@routes';
 import {
@@ -48,6 +49,15 @@ export function usePost() {
     });
   }, [navigation, route.params.owner_username, route.params.slug]);
 
+  const onPressShare = () => {
+    Share.open({
+      message:
+        'https://www.tabnews.com.br/adonaipinheiro/tabnews-react-native-v0-0-3-wip',
+      title: 'Olá, mundo',
+      url: 'https://www.tabnews.com.br/api/v1/contents/adonaipinheiro/tabnews-react-native-v0-0-3-wip/thumbnail',
+    }).catch(() => {});
+  };
+
   useEffect(() => {
     const {title, children_deep_count, tabcoins} = route.params;
     navigation.setOptions({
@@ -74,6 +84,7 @@ export function usePost() {
     onPressLike,
     onPressUnlike,
     onPressComments,
+    onPressShare,
     owner_username: route.params.owner_username,
   };
 }

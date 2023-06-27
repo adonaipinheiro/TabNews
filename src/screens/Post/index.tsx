@@ -19,6 +19,7 @@ export function Post() {
     onPressLike,
     onPressUnlike,
     onPressComments,
+    onPressShare,
     owner_username,
   } = usePost();
 
@@ -46,6 +47,7 @@ export function Post() {
         onLike={onPressLike}
         onUnlike={onPressUnlike}
         onComments={onPressComments}
+        onShare={onPressShare}
       />
     </SafeAreaView>
   );
