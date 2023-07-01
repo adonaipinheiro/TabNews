@@ -1,4 +1,4 @@
-import {Platform, StyleSheet} from 'react-native';
+import {StyleSheet} from 'react-native';
 
 import {$COLORS} from '@utils';
 
@@ -12,7 +12,6 @@ const styles = StyleSheet.create({
   },
   headerContainer: {
     backgroundColor: $COLORS.primary,
-    paddingTop: Platform.OS === 'ios' ? 44 : 0,
     padding: 10,
     justifyContent: 'center',
     alignItems: 'center',
@@ -39,6 +38,16 @@ const styles = StyleSheet.create({
   },
   icon: {
     width: 30,
+  },
+  versionArea: {
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'flex-start',
+    margin: 10,
+  },
+  versionText: {
+    color: $COLORS.blackWithOpacity(6),
+    fontSize: 12,
   },
 });
 

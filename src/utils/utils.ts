@@ -1,9 +1,5 @@
 import {getDefaultHeaderHeight} from '@react-navigation/elements';
-import {
-  differenceInDays,
-  differenceInHours,
-  differenceInMinutes,
-} from 'date-fns';
+import {formatDistance} from 'date-fns';
 import {Dimensions, Platform, StyleSheet} from 'react-native';
 
 import {$COLORS} from './colors';
@@ -23,27 +19,12 @@ export function calculeDiffDate(dateParam: string) {
   const date = new Date(dateParam);
   const dateNow = new Date();
 
-  const diffInDays = differenceInDays(dateNow, date);
-
-  if (diffInDays > 0) {
-    return `${diffInDays} dia${diffInDays > 1 ? 's' : ''} atrás`;
-  }
-
-  const diffInHours = differenceInHours(dateNow, date);
-
-  if (diffInHours > 0) {
-    return `${diffInHours} hora${diffInHours > 1 ? 's' : ''} atrás`;
-  }
-
-  const diffInMinutes = differenceInMinutes(dateNow, date);
-
-  if (diffInMinutes > 0) {
-    return `${diffInMinutes} minuto${
-      diffInMinutes > 1 ? 's' : ''
-    } atrás`;
-  }
-
-  return 'momentos atrás';
+  return (
+    formatDistance(date, dateNow, {
+      addSuffix: false,
+      locale: require('date-fns/locale/pt-BR'),
+    }) + ' atrás'
+  );
 }
 
 export const markdownStyles = StyleSheet.create({

@@ -2,6 +2,7 @@ const $COLORS_COMMON = {
   primary: 'rgb(36, 41, 47)',
   primaryDark: '#16191d',
   white: '#FFFFFF',
+  offWhite: '#f2f2f2',
   black: 'rgb(1, 4, 9)',
   green: 'rgb(31, 136, 61)',
   greenDark: '#18682e',

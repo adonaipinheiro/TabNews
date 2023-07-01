@@ -1,11 +1,9 @@
 import React from 'react';
-import {ScrollView} from 'react-native';
-import {Markdown} from 'react-native-markdown-display';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
 import {ErrorScreen, LoadingScreen} from '@components';
-import {markdownStyles} from '@utils';
 
+import {CommentsList} from './components';
 import styles from './styles';
 import {useComments} from './useComments';
 
@@ -21,16 +19,10 @@ export function Comments() {
   }
 
   return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.scrollView}>
-        {data.map((comment, index) => {
-          return (
-            <Markdown key={index} style={markdownStyles}>
-              {comment.body}
-            </Markdown>
-          );
-        })}
-      </ScrollView>
+    <SafeAreaView
+      edges={['bottom', 'left', 'right']}
+      style={styles.container}>
+      <CommentsList data={data} />
     </SafeAreaView>
   );
 }

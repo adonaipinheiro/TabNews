@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Divider /> should Divider component renders correctly 1`] = `
+<View
+  style={
+    {
+      "height": 2,
+      "width": 0,
+    }
+  }
+/>
+`;

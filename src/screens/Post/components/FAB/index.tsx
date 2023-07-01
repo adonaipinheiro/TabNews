@@ -16,10 +16,11 @@ interface FABProps {
   onLike(): void;
   onUnlike(): void;
   onComments(): void;
+  onShare(): void;
 }
 
 export const FAB = memo(
-  ({onLike, onUnlike, onComments}: FABProps) => {
+  ({onLike, onUnlike, onComments, onShare}: FABProps) => {
     const [isOpen, setOpen] = useState<boolean>(false);
 
     function handleOpen() {
@@ -52,13 +53,32 @@ export const FAB = memo(
             <Animated.View
               entering={ZoomInEasyDown.duration(300)
                 .easing(Easing.bounce)
-                .delay(200)}>
+                .delay(300)}>
               <TouchableOpacity
                 onPress={onUnlike}
                 activeOpacity={0.7}
                 style={[styles.fabButtons, styles.fabButtonUnlike]}>
                 <Icon
                   name="thumbs-down"
+                  light
+                  color={$COLORS.white}
+                  size={18}
+                />
+              </TouchableOpacity>
+            </Animated.View>
+
+            <Divider size={20} />
+
+            <Animated.View
+              entering={ZoomInEasyDown.duration(300)
+                .easing(Easing.bounce)
+                .delay(200)}>
+              <TouchableOpacity
+                onPress={onShare}
+                activeOpacity={0.7}
+                style={styles.fabButtons}>
+                <Icon
+                  name="share-alt"
                   light
                   color={$COLORS.white}
                   size={18}

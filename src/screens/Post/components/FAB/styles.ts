@@ -12,9 +12,9 @@ const styles = StyleSheet.create({
   },
   fabButtons: {
     backgroundColor: $COLORS.primary,
-    height: 40,
-    width: 40,
-    borderRadius: 20,
+    height: 44,
+    width: 44,
+    borderRadius: 22,
     justifyContent: 'center',
     alignItems: 'center',
   },

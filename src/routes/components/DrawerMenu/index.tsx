@@ -7,6 +7,7 @@ import {
 import {DrawerActions, useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {ScrollView, Text, View} from 'react-native';
+import {getBuildNumber, getVersion} from 'react-native-device-info';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
@@ -50,9 +51,7 @@ export const DrawerMenu = (props: DrawerContentComponentProps) => {
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
-        <SafeAreaView
-          edges={['left', 'right']}
-          style={styles.headerContent}>
+        <SafeAreaView edges={['top']} style={styles.headerContent}>
           <View style={styles.iconArea}>
             <Icon solid name="user" size={24} color={$COLORS.black} />
           </View>
@@ -126,14 +125,22 @@ export const DrawerMenu = (props: DrawerContentComponentProps) => {
           {...props}
         />
       </ScrollView>
-      {/*<SafeAreaView>
-        <DrawerItem
+      <SafeAreaView edges={['bottom']}>
+        {/* <DrawerItem
           pressColor={$COLORS.pink}
           inactiveTintColor={$COLORS.red}
           label={'Deslogar'}
           onPress={() => {}}
-        />
-        </SafeAreaView>*/}
+        /> */}
+        <View style={styles.versionArea}>
+          <Text style={styles.versionText}>
+            Versão: {getVersion()}
+          </Text>
+          <Text style={styles.versionText}>
+            Build: {getBuildNumber()}
+          </Text>
+        </View>
+      </SafeAreaView>
     </View>
   );
 };

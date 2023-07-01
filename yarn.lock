@@ -1904,6 +1904,13 @@
   dependencies:
     "@sinonjs/commons" "^3.0.0"
 
+"@testing-library/react-native@^12.1.2":
+  version "12.1.2"
+  resolved "https://registry.yarnpkg.com/@testing-library/react-native/-/react-native-12.1.2.tgz#1935affe1106aeddf0087dff31a6d7414917c098"
+  integrity sha512-5rQMQpbSQAuJc4TxjTt1IoeT1a5eVXaa61hf/YcjV2QtGqCoyhuW8DvhTowrL7y2Ds4NzuYBmbVxjNPR6GIblw==
+  dependencies:
+    pretty-format "^29.0.0"
+
 "@tsconfig/react-native@^2.0.2":
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/@tsconfig/react-native/-/react-native-2.0.3.tgz#79ad8efc6d3729152da6cb23725b6c364a7349b2"
@@ -6518,6 +6525,11 @@ react-native-codegen@^0.71.5:
     jscodeshift "^0.13.1"
     nullthrows "^1.1.1"
 
+react-native-device-info@10.6.0:
+  version "10.6.0"
+  resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-10.6.0.tgz#51f1b2ec98abc32747149b0a5b7fb662b44d50e4"
+  integrity sha512-/MmINdojWdw2/9rwYpH/dX+1gFP0o78p8yYPjwxiPhoySSL2rZaNi+Mq9VwC+zFi/yQmJUvHntkKSw2KUc7rFw==
+
 react-native-exit-app@1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/react-native-exit-app/-/react-native-exit-app-1.1.0.tgz#5ec082152974240e2d6a93f1608efb49a4385f21"
@@ -6590,6 +6602,11 @@ react-native-screens@3.20.0:
   dependencies:
     react-freeze "^1.0.0"
     warn-once "^0.1.0"
+
+react-native-share@9.0.2:
+  version "9.0.2"
+  resolved "https://registry.yarnpkg.com/react-native-share/-/react-native-share-9.0.2.tgz#43ca633c226a3eca69d37d9b0d8ceccac9f6e678"
+  integrity sha512-I877/fq10WnTmiJyhePA1n9b4wqFQAWXI8w/JEJ/3LkSKQNj0LRnt2gpAQspuDP3X0EIyDuexbRlC00fu7LddA==
 
 react-native-splash-screen@3.3.0:
   version "3.3.0"
