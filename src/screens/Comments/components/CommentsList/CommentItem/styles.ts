@@ -22,6 +22,13 @@ const styles = StyleSheet.create({
   commentHeader: {
     flexDirection: 'row',
     flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+  },
+  commentHeaderArea: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    flex: 1,
     justifyContent: 'flex-start',
     alignItems: 'center',
   },
@@ -33,8 +40,8 @@ const styles = StyleSheet.create({
   commentOwnerText: {
     color: $COLORS.link,
   },
-  flatListContentChild: {
-    gap: 10,
+  commentText: {
+    color: $COLORS.gray300,
   },
 });
 

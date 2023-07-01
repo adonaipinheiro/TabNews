@@ -2,7 +2,7 @@ import React, {memo} from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
-import {Divider} from '@components';
+import {Divider, TabCoins} from '@components';
 import {$COLORS} from '@utils';
 
 import styles from './styles';
@@ -23,9 +23,7 @@ export const HeaderRight = memo(
   }: HeaderRightProps) => {
     return (
       <TouchableOpacity onPress={onPress} style={styles.contentArea}>
-        <View style={styles.tabcoinsIcon} />
-        <Divider size={5} horizontal />
-        <Text style={styles.contentText}>{tabCoins}</Text>
+        <TabCoins tabCoins={tabCoins} weight="bold" />
         <View style={styles.separator} />
         <Icon
           name="comments"

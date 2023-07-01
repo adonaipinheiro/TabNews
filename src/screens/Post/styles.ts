@@ -21,6 +21,15 @@ const styles = StyleSheet.create({
   postOwnerText: {
     color: $COLORS.link,
   },
+  postTopArea: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  postTopText: {
+    color: $COLORS.gray300,
+    fontWeight: '600',
+  },
 });
 
 export default styles;
