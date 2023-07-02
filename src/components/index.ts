@@ -7,3 +7,4 @@ export {LoadingScreen} from './LoadingScreen';
 export {ErrorScreen} from './ErrorScreen';
 export {Pagination} from './Pagination';
 export {EmptyScreen} from './EmptyScreen';
+export {TabCoins} from './TabCoins';

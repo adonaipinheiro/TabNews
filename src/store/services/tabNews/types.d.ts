@@ -31,6 +31,7 @@ export type GetContentRequestType = {
 export type GetContentResponseType = {
   body: string;
   title: string;
+  published_at: string;
 };
 
 export type GetContentChildrenRequestType = {

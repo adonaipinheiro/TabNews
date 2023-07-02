@@ -5,8 +5,9 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 
 import {StackNavigationProps} from '@routes';
 import {ContentListType} from '@store/services/tabNews/types';
-import {calculeDiffDate} from '@utils';
+import {$COLORS, calculeDiffDate} from '@utils';
 import {Divider} from 'src/components/Divider';
+import {TabCoins} from 'src/components/TabCoins';
 
 import styles from './styles';
 
@@ -36,11 +37,17 @@ export const ContentItem = memo(
           {number}. {item.title}
         </Text>
         <View style={styles.contentArea}>
-          <View style={styles.tabcoinsIcon} />
-          <Divider size={5} horizontal />
-          <Text style={styles.contentText}>{item.tabcoins}</Text>
+          <TabCoins
+            tabCoins={item.tabcoins}
+            color={$COLORS.gray300}
+          />
           <View style={styles.separator} />
-          <Icon name="comments" light size={14} />
+          <Icon
+            name="comments"
+            light
+            size={14}
+            color={$COLORS.gray300}
+          />
           <Divider size={5} horizontal />
           <Text style={styles.contentText}>
             {item.children_deep_count}

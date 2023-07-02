@@ -3,8 +3,13 @@ import {ScrollView, Text, View} from 'react-native';
 import {Markdown} from 'react-native-markdown-display';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
-import {ErrorScreen, LoadingScreen} from '@components';
-import {markdownStyles} from '@utils';
+import {
+  Divider,
+  EmptyScreen,
+  ErrorScreen,
+  LoadingScreen,
+} from '@components';
+import {formatDate, markdownStyles} from '@utils';
 
 import {FAB} from './components';
 import styles from './styles';
@@ -36,12 +41,19 @@ export function Post() {
       edges={['bottom', 'left', 'right']}
       style={styles.container}>
       <ScrollView style={styles.scrollView}>
-        <View style={styles.postOwnerNameContainer}>
-          <Text style={styles.postOwnerText}>{owner_username}</Text>
+        <View style={styles.postTopArea}>
+          <View style={styles.postOwnerNameContainer}>
+            <Text style={styles.postOwnerText}>{owner_username}</Text>
+          </View>
+          <Text style={styles.postTopText}>
+            {formatDate(data.published_at)}
+          </Text>
         </View>
         <Markdown style={markdownStyles}>
           {`# ${data.title}\n${data.body}`}
         </Markdown>
+        <EmptyScreen text="Fim :/" />
+        <Divider size={80} />
       </ScrollView>
       <FAB
         onLike={onPressLike}

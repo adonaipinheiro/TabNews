@@ -7,6 +7,7 @@ import {useCallback, useEffect} from 'react';
 import {Dimensions} from 'react-native';
 import Share from 'react-native-share';
 
+import {logCrashlytics} from '@analytics';
 import {StackNavigationProps, StackParamList} from '@routes';
 import {
   useGetContentQuery,
@@ -51,11 +52,12 @@ export function usePost() {
 
   const onPressShare = () => {
     Share.open({
-      message:
-        'https://www.tabnews.com.br/adonaipinheiro/tabnews-react-native-v0-0-3-wip',
-      title: 'Olá, mundo',
-      url: 'https://www.tabnews.com.br/api/v1/contents/adonaipinheiro/tabnews-react-native-v0-0-3-wip/thumbnail',
-    }).catch(() => {});
+      message: `https://www.tabnews.com.br/${route.params.owner_username}/${route.params.slug}`,
+      title: route.params.title,
+      url: `https://www.tabnews.com.br/api/v1/contents/${route.params.owner_username}/${route.params.slug}/thumbnail`,
+    }).catch(err => {
+      logCrashlytics(err);
+    });
   };
 
   useEffect(() => {

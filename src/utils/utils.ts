@@ -1,5 +1,5 @@
 import {getDefaultHeaderHeight} from '@react-navigation/elements';
-import {formatDistance} from 'date-fns';
+import {format, formatDistance} from 'date-fns';
 import {Dimensions, Platform, StyleSheet} from 'react-native';
 
 import {$COLORS} from './colors';
@@ -19,18 +19,22 @@ export function calculeDiffDate(dateParam: string) {
   const date = new Date(dateParam);
   const dateNow = new Date();
 
-  return (
-    formatDistance(date, dateNow, {
-      addSuffix: false,
-      locale: require('date-fns/locale/pt-BR'),
-    }) + ' atrás'
-  );
+  return formatDistance(date, dateNow, {
+    addSuffix: true,
+    locale: require('date-fns/locale/pt-BR'),
+  });
+}
+
+export function formatDate(date: string) {
+  return format(new Date(date), 'PPP', {
+    locale: require('date-fns/locale/pt-BR'),
+  });
 }
 
 export const markdownStyles = StyleSheet.create({
   body: {
     paddingTop: 16,
-    paddingBottom: 80,
+    paddingBottom: 16,
   },
   heading1: {
     fontSize: 32,
